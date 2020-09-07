@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lemon-app/lemon-app.iml" filepath="$PROJECT_DIR$/lemon-app/lemon-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemon-auth/lemon-auth.iml" filepath="$PROJECT_DIR$/lemon-auth/lemon-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemon-gateway/lemon-gateway.iml" filepath="$PROJECT_DIR$/lemon-gateway/lemon-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movie.iml" filepath="$PROJECT_DIR$/movie.iml" />
+    </modules>
+  </component>
+</project>

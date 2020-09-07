@@ -8,10 +8,10 @@
 		<version>1.0.0</version>
 	</parent>
 
-	<artifactId>lemon-auth</artifactId>
+	<artifactId>lemon-app</artifactId>
 	<packaging>jar</packaging>
-	<name>lemon-auth</name>
-	<description>lemon认证服务</description>
+	<name>lemon-app</name>
+	<description>lemon的app相关代码</description>
 
 
 	<dependencies>
