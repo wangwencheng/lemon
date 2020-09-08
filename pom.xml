@@ -25,23 +25,10 @@
         <druid.version>1.1.21</druid.version>
         <mysql.connector.version>8.0.19</mysql.connector.version>
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
-        <minio.version>6.0.11</minio.version>
         <hutool.version>5.1.4</hutool.version>
         <velocity.version>1.7</velocity.version>
         <fastjson.version>1.2.62</fastjson.version>
-        <jasypt.version>2.1.1</jasypt.version>
-        <ttl.version>2.11.2</ttl.version>
-        <xxl.job.version>2.1.1</xxl.job.version>
         <security.oauth.version>2.5.0.RELEASE</security.oauth.version>
-        <aliyun-oss.version>3.4.2</aliyun-oss.version>
-        <qiniu-oss.version>7.2.27</qiniu-oss.version>
-        <elasticsearch.version>7.3.0</elasticsearch.version>
-        <docker.registry>harbor.geeboo.com</docker.registry>
-        <docker.host>http://192.168.10.55:2375</docker.host>
-        <docker.namespace>elibrary</docker.namespace>
-        <docker.username>gbcloud</docker.username>
-        <docker.password>Geeboo123456</docker.password>
-        <docker.plugin.version>0.32.0</docker.plugin.version>
     </properties>
 
 
@@ -83,6 +70,8 @@
     </dependencies>
 
     <modules>
+        <module>lemon-common</module>
+        <module>lemon-user</module>
         <module>lemon-auth</module>
         <module>lemon-app</module>
         <module>lemon-gateway</module>
@@ -163,6 +152,11 @@
                 <version>${fastjson.version}</version>
             </dependency>
             <!--公共组件-->
+            <dependency>
+                <groupId>org.lemon</groupId>
+                <artifactId>lemon-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -187,29 +181,6 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
-                <plugin>
-                    <groupId>io.fabric8</groupId>
-                    <artifactId>docker-maven-plugin</artifactId>
-                    <version>${docker.plugin.version}</version>
-                    <configuration>
-                        <dockerHost>${docker.host}</dockerHost>
-                        <registry>${docker.registry}</registry>
-                        <authConfig>
-                            <push>
-                                <username>${docker.username}</username>
-                                <password>${docker.password}</password>
-                            </push>
-                        </authConfig>
-                        <images>
-                            <image>
-                                <name>${docker.registry}/${docker.namespace}/${project.name}:${project.version}</name>
-                                <build>
-                                    <dockerFile>${project.basedir}/Dockerfile</dockerFile>
-                                </build>
-                            </image>
-                        </images>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

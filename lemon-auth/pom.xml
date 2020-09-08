@@ -20,12 +20,6 @@
 			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
 		</dependency>
-		<!--稳定版本，替代spring security bom内置-->
-		<dependency>
-			<groupId>org.springframework.security.oauth</groupId>
-			<artifactId>spring-security-oauth2</artifactId>
-			<version>${security.oauth.version}</version>
-		</dependency>
 		<!--配置中心客户端-->
 		<dependency>
 			<groupId>com.alibaba.cloud</groupId>
@@ -69,6 +63,10 @@
 			</exclusions>
 		</dependency>
 		<!--内部公共模块-->
+		<dependency>
+			<groupId>org.lemon</groupId>
+			<artifactId>lemon-common</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

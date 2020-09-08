@@ -2,10 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lemon-user" />
+        <module name="lemon-common" />
         <module name="lemon-app" />
         <module name="lemon-auth" />
         <module name="lemon-gateway" />
@@ -14,7 +17,9 @@
     <bytecodeTargetLevel>
       <module name="lemon-app" target="1.8" />
       <module name="lemon-auth" target="1.8" />
+      <module name="lemon-common" target="1.8" />
       <module name="lemon-gateway" target="1.8" />
+      <module name="lemon-user" target="1.8" />
       <module name="movie" target="1.8" />
     </bytecodeTargetLevel>
   </component>
