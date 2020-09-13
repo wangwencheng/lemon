@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "security.oauth2.client",
+      "type": "org.lemon.common.security.component.PermitAllUrlProperties",
+      "sourceType": "org.lemon.common.security.component.PermitAllUrlProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "security.oauth2.client.ignore-urls",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.lemon.common.security.component.PermitAllUrlProperties"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,58 @@
+{
+  "groups": [
+    {
+      "name": "api",
+      "type": "org.lemon.common.gateway.properties.ApiProperties",
+      "sourceType": "org.lemon.common.gateway.properties.ApiProperties"
+    },
+    {
+      "name": "ribbon.rule",
+      "type": "org.lemon.common.gateway.support.GbRibbonRuleProperties",
+      "sourceType": "org.lemon.common.gateway.support.GbRibbonRuleProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "api.ignore-check-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "org.lemon.common.gateway.properties.ApiProperties"
+    },
+    {
+      "name": "api.replay-attack",
+      "type": "org.lemon.common.gateway.properties.ReplayAttackProperties",
+      "sourceType": "org.lemon.common.gateway.properties.ApiProperties"
+    },
+    {
+      "name": "api.response-merge",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.lemon.common.gateway.properties.ApiProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "api.sign",
+      "type": "org.lemon.common.gateway.properties.SignProperties",
+      "sourceType": "org.lemon.common.gateway.properties.ApiProperties"
+    },
+    {
+      "name": "ribbon.rule.enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启，默认：true",
+      "sourceType": "org.lemon.common.gateway.support.GbRibbonRuleProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "ribbon.rule.gray-enabled",
+      "type": "java.lang.Boolean",
+      "description": "是否开启灰度路由，默认:false",
+      "sourceType": "org.lemon.common.gateway.support.GbRibbonRuleProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "ribbon.rule.prior-ip-pattern",
+      "type": "java.util.List<java.lang.String>",
+      "description": "优先的ip列表，支持通配符，例如：10.20.0.8*、10.20.0.*",
+      "sourceType": "org.lemon.common.gateway.support.GbRibbonRuleProperties"
+    }
+  ],
+  "hints": []
+}

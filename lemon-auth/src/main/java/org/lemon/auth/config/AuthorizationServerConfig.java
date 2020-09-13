@@ -1,8 +1,7 @@
-package org.lemon.app.config;
+package org.lemon.auth.config;
 
-import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
-import org.lemon.common.service.impl.LemonUserServiceImpl;
+import org.lemon.common.security.service.impl.LemonUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,11 +31,11 @@ import javax.sql.DataSource;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
-    private  DataSource dataSource;
+    private DataSource dataSource;
     @Autowired
-    private  TokenEnhancer gbTokenEnhancer;
+    private LemonUserDetailsServiceImpl lemonUserService;
     @Autowired
-    private LemonUserServiceImpl lemonUserService;
+    private TokenEnhancer lemonTokenEnhancer;
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
     @Autowired
@@ -52,7 +51,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) {
         oauthServer
                 .allowFormAuthenticationForClients()
-                .checkTokenAccess("isAuthenticated()");
+                .checkTokenAccess("isAuthenticated()")
+                .tokenKeyAccess("isAuthenticated()");
     }
 
     @Override
@@ -60,7 +60,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         endpoints
                 .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST)
                 .tokenStore(tokenStore())
-                .tokenEnhancer(gbTokenEnhancer)
+                .tokenEnhancer(lemonTokenEnhancer)
                 .userDetailsService(lemonUserService)
                 .authenticationManager(authenticationManager)
                 .reuseRefreshTokens(false)

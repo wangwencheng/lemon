@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.lemon.common.core.config.RestTemplateConfig,\
+  org.lemon.common.core.config.JacksonConfig,\
+  org.lemon.common.core.handler.GlobalExceptionHandler,\
+  org.lemon.common.core.handler.RestExceptionHandler,\
+  org.lemon.common.core.util.SpringContextHolder
+
+

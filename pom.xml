@@ -21,6 +21,7 @@
         <swagger.fox.version>2.9.2</swagger.fox.version>
         <swagger.core.version>1.5.22</swagger.core.version>
         <knife4j.version>2.0.1</knife4j.version>
+        <ttl.version>2.11.2</ttl.version>
         <spring-boot-admin.version>2.2.2</spring-boot-admin.version>
         <druid.version>1.1.21</druid.version>
         <mysql.connector.version>8.0.19</mysql.connector.version>
@@ -75,6 +76,7 @@
         <module>lemon-auth</module>
         <module>lemon-app</module>
         <module>lemon-gateway</module>
+        <module>lemon-user-api</module>
     </modules>
 
     <dependencyManagement>
@@ -108,12 +110,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--稳定版本，替代spring security bom内置-->
-            <dependency>
-                <groupId>org.springframework.security.oauth</groupId>
-                <artifactId>spring-security-oauth2</artifactId>
-                <version>${security.oauth.version}</version>
-            </dependency>
+
             <!--web 模块-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -154,7 +151,32 @@
             <!--公共组件-->
             <dependency>
                 <groupId>org.lemon</groupId>
-                <artifactId>lemon-common</artifactId>
+                <artifactId>lemon-common-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.lemon</groupId>
+                <artifactId>lemon-common-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.lemon</groupId>
+                <artifactId>lemon-common-feign</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.lemon</groupId>
+                <artifactId>lemon-common-gateway</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.lemon</groupId>
+                <artifactId>lemon-common-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.lemon</groupId>
+                <artifactId>lemon-user-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

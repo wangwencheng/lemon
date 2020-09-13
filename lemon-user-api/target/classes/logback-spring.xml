@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="false" scan="false">
+	<property name="log.path" value="lemon_logs/lemon-user-api"/>
+	<springProperty name="app.name" scope="context" source="spring.application.name"/>
+	<springProperty name="server.ip" scope="context" source="spring.cloud.client.ip-address" defaultValue="0.0.0.0"/>
+	<springProperty name="server.port" scope="context" source="server.port" defaultValue="0000"/>
+
+	<!-- 彩色日志依赖的渲染类 -->
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+	<conversionRule conversionWord="wex"
+					converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+	<conversionRule conversionWord="wEx"
+					converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+	<!-- 彩色日志格式 -->
+	<property name="CONSOLE_LOG_PATTERN"
+			  value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${PID:- }){magenta} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([%X{traceId}]){blue} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+	<!-- 无彩色日志格式 -->
+	<property name="CONSOLE_LOG_PATTERN_NO_COLOR"
+			  value="${CONSOLE_LOG_PATTERN_NO_COLOR:-[${app.name}:${server.ip}:${server.port}] %d{yyyy-MM-dd HH:mm:ss.SSS} ${PID:- } ${LOG_LEVEL_PATTERN:-%5p} [%X{traceId}] --- [%15.15t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+
+	<!-- Console log output -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Log file info output -->
+	<appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/info.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/%d{yyyy-MM, aux}/info.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+			<maxFileSize>50MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN_NO_COLOR}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<!-- Log file warn output -->
+	<appender name="warn" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/warn.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/%d{yyyy-MM, aux}/warn.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+			<maxFileSize>50MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN_NO_COLOR}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARN</level>
+		</filter>
+	</appender>
+
+	<!-- Log file error output -->
+	<appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/error.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/%d{yyyy-MM}/error.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+			<maxFileSize>50MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN_NO_COLOR}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+	</appender>
+
+	<!--nacos 心跳 INFO 屏蔽-->
+	<logger name="com.alibaba.nacos" level="OFF">
+		<appender-ref ref="error"/>
+	</logger>
+
+	<!-- Level: FATAL 0  ERROR 3  WARN 4  INFO 6  DEBUG 7 -->
+	<root level="INFO">
+		<appender-ref ref="console"/>
+		<appender-ref ref="info"/>
+		<appender-ref ref="warn"/>
+		<appender-ref ref="error"/>
+	</root>
+</configuration>

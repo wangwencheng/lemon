@@ -5,8 +5,14 @@
       <module fileurl="file://$PROJECT_DIR$/lemon-app/lemon-app.iml" filepath="$PROJECT_DIR$/lemon-app/lemon-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lemon-auth/lemon-auth.iml" filepath="$PROJECT_DIR$/lemon-auth/lemon-auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/lemon-common/lemon-common.iml" filepath="$PROJECT_DIR$/lemon-common/lemon-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemon-common/lemon-common-core/lemon-common-core.iml" filepath="$PROJECT_DIR$/lemon-common/lemon-common-core/lemon-common-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemon-common/lemon-common-data/lemon-common-data.iml" filepath="$PROJECT_DIR$/lemon-common/lemon-common-data/lemon-common-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemon-common/lemon-common-feign/lemon-common-feign.iml" filepath="$PROJECT_DIR$/lemon-common/lemon-common-feign/lemon-common-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemon-common/lemon-common-gateway/lemon-common-gateway.iml" filepath="$PROJECT_DIR$/lemon-common/lemon-common-gateway/lemon-common-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemon-common/lemon-common-security/lemon-common-security.iml" filepath="$PROJECT_DIR$/lemon-common/lemon-common-security/lemon-common-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/lemon-gateway/lemon-gateway.iml" filepath="$PROJECT_DIR$/lemon-gateway/lemon-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/lemon-user/lemon-user.iml" filepath="$PROJECT_DIR$/lemon-user/lemon-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lemon-user-api/lemon-user-api.iml" filepath="$PROJECT_DIR$/lemon-user-api/lemon-user-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/movie.iml" filepath="$PROJECT_DIR$/movie.iml" />
     </modules>
   </component>

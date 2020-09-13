@@ -65,7 +65,15 @@
 		<!--内部公共模块-->
 		<dependency>
 			<groupId>org.lemon</groupId>
-			<artifactId>lemon-common</artifactId>
+			<artifactId>lemon-common-data</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.lemon</groupId>
+			<artifactId>lemon-common-feign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.lemon</groupId>
+			<artifactId>lemon-common-security</artifactId>
 		</dependency>
 	</dependencies>
 
