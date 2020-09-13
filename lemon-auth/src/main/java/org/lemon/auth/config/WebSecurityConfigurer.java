@@ -21,42 +21,45 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Order(90)
 @Configuration
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
-	@Override
-	@SneakyThrows
-	protected void configure(HttpSecurity http) {
-		http
-				.formLogin()
-				.loginPage("/token/login")
-				.loginProcessingUrl("/form/token")
-				.and()
-				.authorizeRequests()
-				.antMatchers(
-						"/sso/**",
-						"/token/**",
-						"/actuator/**",
-						"/code/**").permitAll()
-				.anyRequest().authenticated()
-				.and().csrf().disable();
-			//	.apply(mobileSecurityConfigurer());
-	}
+    @Override
+    @SneakyThrows
+    protected void configure(HttpSecurity http) {
+        http
+                .formLogin()
+                .loginPage("/token/toTogin")
+                .loginProcessingUrl("/authentication/form")
+                .defaultSuccessUrl("/index.html")
+                .and()
+                .authorizeRequests()
+                .antMatchers(
+                        "/sso/**",
+                        "/token/**",
+                        "/actuator/**",
+                        "/code/**",
+                        "/login.html").permitAll()
+                .anyRequest().authenticated()
+                .and().csrf().disable();
+        //	.apply(mobileSecurityConfigurer());
+    }
 
-	/**
-	 * 不拦截静态资源
-	 *
-	 * @param web
-	 */
-	@Override
-	public void configure(WebSecurity web) {
-		web.ignoring().antMatchers("/css/**");
-		web.ignoring().antMatchers("/js/**");
-	}
+    /**
+     * 不拦截静态资源
+     *
+     * @param web
+     */
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers("/assets/**", "/css/**", "/images/**");
+        web.ignoring().antMatchers("/css/**");
+        web.ignoring().antMatchers("/js/**");
+    }
 
-	@Bean
-	@Override
-	@SneakyThrows
-	public AuthenticationManager authenticationManagerBean() {
-		return super.authenticationManagerBean();
-	}
+    @Bean
+    @Override
+    @SneakyThrows
+    public AuthenticationManager authenticationManagerBean() {
+        return super.authenticationManagerBean();
+    }
 
 //	@Bean
 //	public AuthenticationSuccessHandler mobileLoginSuccessHandler() {
@@ -68,14 +71,14 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 //		return new MobileSecurityConfigurer();
 //	}
 
-	/**
-	 * https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-updated
-	 * Encoded password does not look like BCrypt
-	 *
-	 * @return PasswordEncoder
-	 */
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new LemonPasswordEncoder();
-	}
+    /**
+     * https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-updated
+     * Encoded password does not look like BCrypt
+     *
+     * @return PasswordEncoder
+     */
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new LemonPasswordEncoder();
+    }
 }

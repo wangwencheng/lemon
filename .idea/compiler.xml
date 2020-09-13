@@ -2,24 +2,34 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="lemon-user" />
-        <module name="lemon-common" />
-        <module name="lemon-app" />
-        <module name="lemon-auth" />
+        <module name="lemon-user-api" />
         <module name="lemon-gateway" />
+        <module name="lemon-common-core" />
+        <module name="lemon-common-feign" />
+        <module name="lemon-auth" />
+        <module name="lemon-common-gateway" />
+        <module name="lemon-app" />
+        <module name="lemon-common-data" />
+        <module name="lemon-common-security" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lemon-app" target="1.8" />
       <module name="lemon-auth" target="1.8" />
       <module name="lemon-common" target="1.8" />
+      <module name="lemon-common-core" target="1.8" />
+      <module name="lemon-common-data" target="1.8" />
+      <module name="lemon-common-feign" target="1.8" />
+      <module name="lemon-common-gateway" target="1.8" />
+      <module name="lemon-common-security" target="1.8" />
       <module name="lemon-gateway" target="1.8" />
       <module name="lemon-user" target="1.8" />
+      <module name="lemon-user-api" target="1.8" />
       <module name="movie" target="1.8" />
     </bytecodeTargetLevel>
   </component>
