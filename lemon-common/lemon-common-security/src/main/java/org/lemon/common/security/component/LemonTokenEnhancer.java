@@ -1,7 +1,7 @@
 package org.lemon.common.security.component;
 
 import org.lemon.common.core.constant.SecurityConstant;
-import org.lemon.common.security.util.GbUser;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -32,11 +32,11 @@ public class LemonTokenEnhancer implements TokenEnhancer {
 		}
 
 		final Map<String, Object> additionalInfo = new HashMap<>(8);
-		GbUser gbUser = (GbUser) authentication.getUserAuthentication().getPrincipal();
-		additionalInfo.put(SecurityConstant.DETAILS_USER_NO, gbUser.getUserNo());
-		additionalInfo.put(SecurityConstant.DETAILS_USERNAME, gbUser.getUsername());
-		additionalInfo.put(SecurityConstant.DETAILS_MOBILE, gbUser.getMobile());
-		additionalInfo.put(SecurityConstant.DETAILS_TENANT_ID, gbUser.getTenantId());
+		User user = (User) authentication.getUserAuthentication().getPrincipal();
+		additionalInfo.put(SecurityConstant.DETAILS_USER_NO, user.getUsername());
+		additionalInfo.put(SecurityConstant.DETAILS_USERNAME, user.getUsername());
+		additionalInfo.put(SecurityConstant.DETAILS_MOBILE, user.getUsername());
+		additionalInfo.put(SecurityConstant.DETAILS_TENANT_ID, null);
 		additionalInfo.put(SecurityConstant.DETAILS_LICENSE, SecurityConstant.ELIB_LICENSE);
 		additionalInfo.put(SecurityConstant.ACTIVE, Boolean.TRUE);
 		((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);

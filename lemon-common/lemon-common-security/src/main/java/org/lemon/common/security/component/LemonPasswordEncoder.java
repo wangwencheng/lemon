@@ -39,7 +39,8 @@ public class LemonPasswordEncoder implements PasswordEncoder {
 
 	@Override
 	public boolean matches(CharSequence inputPassword, String dbPassword) {
-		return passwordEncoder.matches(inputPassword, dbPassword);
+		return inputPassword.equals(dbPassword);
+		//return passwordEncoder.matches(inputPassword, dbPassword);
 	}
 
 	public String salt() {

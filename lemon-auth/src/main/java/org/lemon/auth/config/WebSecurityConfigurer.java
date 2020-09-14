@@ -48,7 +48,6 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(
-                        "/token/toLogin",
                         "/sso/**",
                         "/actuator/**",
                         "/code/**",

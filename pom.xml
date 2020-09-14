@@ -110,6 +110,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--稳定版本，替代spring security bom内置-->
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${security.oauth.version}</version>
+            </dependency>
 
             <!--web 模块-->
             <dependency>
