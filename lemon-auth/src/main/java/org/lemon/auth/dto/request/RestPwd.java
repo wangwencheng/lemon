@@ -1,4 +1,4 @@
-package org.lemon.app.dto.request;
+package org.lemon.auth.dto.request;
 
 import lombok.Data;
 

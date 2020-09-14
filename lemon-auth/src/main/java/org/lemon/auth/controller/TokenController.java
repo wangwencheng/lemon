@@ -21,20 +21,19 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Slf4j
 @Controller
-@RequestMapping("token")
+@RequestMapping(value = "token")
 public class TokenController {
     @Autowired
     private TokenStore tokenStore;
 
-    @GetMapping("toTogin")
+    @RequestMapping(value = "toLogin")
     public String login(HttpServletRequest request) {
-        return "login";
+        return "/pages/login";
     }
 
-    @ResponseBody
-    @RequestMapping("test")
+    @RequestMapping(value = "test")
     public String test() {
-        return "success";
+        return "/pages/test";
     }
 
     /**
@@ -42,7 +41,7 @@ public class TokenController {
      *
      * @param authHeader Authorization
      */
-    @DeleteMapping("logout")
+    @DeleteMapping(value = "logout")
     public R logout(@RequestHeader(value = HttpHeaders.AUTHORIZATION, required = false) String authHeader, @RequestParam String from) {
         if (StrUtil.isBlank(authHeader)) {
             return R.ok(Boolean.FALSE, "退出失败，token 为空");

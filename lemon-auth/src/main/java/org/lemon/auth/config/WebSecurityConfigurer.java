@@ -1,7 +1,12 @@
 package org.lemon.auth.config;
 
 import lombok.SneakyThrows;
+import org.lemon.auth.handler.LemonAuthenticationFailureHandler;
+import org.lemon.auth.handler.LemonAuthenticationSuccessHandler;
 import org.lemon.common.security.component.LemonPasswordEncoder;
+import org.lemon.common.security.handler.MobileLoginSuccessHandler;
+import org.lemon.common.security.mobile.MobileSecurityConfigurer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -11,6 +16,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 /**
  * 认证相关配置
@@ -21,25 +27,46 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Order(90)
 @Configuration
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private LemonAuthenticationSuccessHandler lemonAuthenticationSuccessHandler;
+
+    @Autowired
+    private LemonAuthenticationFailureHandler lemonAuthenticationFailureHandler;
+
     @Override
     @SneakyThrows
     protected void configure(HttpSecurity http) {
         http
                 .formLogin()
-                .loginPage("/token/toTogin")
+                .loginPage("/pages/login.html")
                 .loginProcessingUrl("/authentication/form")
-                .defaultSuccessUrl("/index.html")
+                .defaultSuccessUrl("/pages/index.html")
+                .successHandler(lemonAuthenticationSuccessHandler)//配置successHandler
+                .failureHandler(lemonAuthenticationFailureHandler)//配置failureHandler
                 .and()
                 .authorizeRequests()
                 .antMatchers(
+                        "/token/toLogin",
                         "/sso/**",
-                        "/token/**",
                         "/actuator/**",
                         "/code/**",
-                        "/login.html").permitAll()
+                        "/token/**",
+                        "/pages/login.html").permitAll()
                 .anyRequest().authenticated()
-                .and().csrf().disable();
-        //	.apply(mobileSecurityConfigurer());
+                .and()
+                .csrf().disable();
+               // .apply(mobileSecurityConfigurer());
+    }
+
+
+    @Bean
+    public AuthenticationSuccessHandler mobileLoginSuccessHandler() {
+        return new MobileLoginSuccessHandler();
+    }
+
+    @Bean
+    public MobileSecurityConfigurer mobileSecurityConfigurer() {
+        return new MobileSecurityConfigurer();
     }
 
     /**
@@ -49,9 +76,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
      */
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/assets/**", "/css/**", "/images/**");
-        web.ignoring().antMatchers("/css/**");
-        web.ignoring().antMatchers("/js/**");
+        web.ignoring().antMatchers("/pages/**","/assets/**", "/css/**", "/images/**", "/js/**");
     }
 
     @Bean

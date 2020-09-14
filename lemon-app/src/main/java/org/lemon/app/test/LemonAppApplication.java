@@ -1,7 +1,6 @@
-package org.lemon.app;
+package org.lemon.app.test;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 
 /**
