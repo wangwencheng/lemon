@@ -24,6 +24,7 @@ public class LemonAuthenticationSuccessHandler implements AuthenticationSuccessH
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         log.info("登录成功");
         response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(objectMapper.writeValueAsString(authentication));//将java对象转成json字符串写入response，Authtication参数中包含我们的认证信息
+        //将java对象转成json字符串写入response，Authtication参数中包含我们的认证信息
+        response.getWriter().write(objectMapper.writeValueAsString(authentication));
     }
 }

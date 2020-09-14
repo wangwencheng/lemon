@@ -27,9 +27,10 @@ public class LemonAuthenticationFailureHandler implements AuthenticationFailureH
         R r=new R<>();
         r.setCode(ErrorCodeEnum.DATA_NOT_EXIST.getCode());
         r.setMsg(exception.getMessage());
-        log.info("登陆失败原因:{}",exception.getMessage());
+        log.info("登陆失败原因",exception);
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(objectMapper.writeValueAsString(r));//将异常写入response中,显示在页面上
+        //将异常写入response中,显示在页面上
+        response.getWriter().write(objectMapper.writeValueAsString(r));
     }
 }

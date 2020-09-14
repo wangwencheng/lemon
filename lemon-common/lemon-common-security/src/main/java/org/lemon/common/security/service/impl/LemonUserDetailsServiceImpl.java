@@ -35,15 +35,15 @@ public class LemonUserDetailsServiceImpl implements LemonUserDetailsService {
     @Override
     @SneakyThrows
     public UserDetails loadUserByUsername(String inStr) {
-        String type = StrUtil.subBefore(inStr, StringPool.AT, false);
-        String username = StrUtil.subAfter(inStr, StringPool.AT, false);
-//		type = Optional.ofNullable(type).orElseGet(() -> SystemTypeEnum.APP.getType());
-        type = SystemTypeEnum.PC.getType().equals(type) ? SystemTypeEnum.APP.getType() : type;
+        String type = "APP";
+  //      String username = StrUtil.subAfter(inStr, StringPool.AT, false);
+   // 		type = Optional.ofNullable(type).orElseGet(() -> SystemTypeEnum.APP.getType());
+   //     type = SystemTypeEnum.PC.getType().equals(type) ? SystemTypeEnum.APP.getType() : type;
         LemonUserService service = userServiceMap.get(type);
         if (null == service) {
             throw new UsernameNotFoundException("缺少必要的参数");
         }
-        return service.info(username);
+        return service.info(inStr);
     }
 
 
