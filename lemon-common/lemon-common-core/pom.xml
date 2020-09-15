@@ -34,6 +34,12 @@
 			<artifactId>mybatis-plus-extension</artifactId>
 			<version>${mybatis-plus.version}</version>
 		</dependency>
+		<!--mysql 驱动-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
 		<!--json模块-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -64,6 +70,7 @@
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
+			<version>2.3.30</version>
 		</dependency>
 	</dependencies>
 

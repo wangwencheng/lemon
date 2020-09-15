@@ -77,7 +77,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
      */
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/pages/**","/assets/**", "/css/**", "/images/**", "/js/**");
+        web.ignoring().antMatchers("/auth/pages/**","/auth/assets/**", "/auth/css/**", "/auth/images/**", "/auth/js/**");
     }
 
     @Bean
@@ -108,10 +108,10 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
         return new LemonPasswordEncoder();
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance())
-                .withUser("simm").password("123").roles("USER").and()
-                .withUser("admin").password("admin").roles("USER","ADMIN");
-    }
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.inMemoryAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance())
+//                .withUser("simm").password("123").roles("USER").and()
+//                .withUser("admin").password("admin").roles("USER","ADMIN");
+//    }
 }

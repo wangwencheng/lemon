@@ -22,7 +22,7 @@ import java.util.Map;
  *
  * @author Ervin
  */
-@FeignClient(contextId = "remoteUserService", value = ServiceNameConstant.USER_SERVICE)
+@FeignClient(contextId = "remoteUserService", value = ServiceNameConstant.USER_SERVICE,url = "localhost:8080/user")
 public interface RemoteUserService {
 	/**
 	 * 通过用户名查询用户信息
@@ -43,8 +43,7 @@ public interface RemoteUserService {
 	 * @return R
 	 */
 	@GetMapping("/mobile/info/{mobile}")
-	R<UserInfo> getByMobile(@PathVariable("mobile") String mobile
-			, @RequestHeader(SecurityConstant.FROM) String from);
+	R<UserInfo> getByMobile(@PathVariable("mobile") String mobile);
 
 	/**
 	 * 根据条件查询用户分页

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ErvinWang
  */
 @RestController
-@RequestMapping("test")
 public class TestController {
     @RequestMapping("test")
     public R test() {

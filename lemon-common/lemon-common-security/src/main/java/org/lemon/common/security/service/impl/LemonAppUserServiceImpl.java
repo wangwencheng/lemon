@@ -44,12 +44,12 @@ public class LemonAppUserServiceImpl implements LemonUserService {
     public UserDetails info(String username) throws UsernameNotFoundException {
         Cache cache = cacheManager.getCache(CacheConstant.USER_DETAILS);
         if (cache != null && cache.get(username) != null) {
-            return (GbUser) cache.get(username).get();
+            return (User)cache.get(username).get();
         }
         R<UserInfo> result;
         if (Validator.isMobile(username)) {
             //手机号登录
-            result = remoteUserService.getByMobile(username, SecurityConstant.FROM_IN);
+            result = remoteUserService.getByMobile(username);
         } else {
             throw new BusinessException("目前暂时只支持手机登陆!");
         }
