@@ -1,4 +1,4 @@
-package org.lemon.app.test;
+package org.lemon.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;

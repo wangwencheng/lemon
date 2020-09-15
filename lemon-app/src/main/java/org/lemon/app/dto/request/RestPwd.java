@@ -1,4 +1,4 @@
-package org.lemon.app.test.dto.request;
+package org.lemon.app.dto.request;
 
 import lombok.Data;
 

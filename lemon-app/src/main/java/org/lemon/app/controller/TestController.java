@@ -1,4 +1,4 @@
-package org.lemon.app.test.controller;
+package org.lemon.app.controller;
 
 import com.baomidou.mybatisplus.extension.api.R;
 import org.springframework.web.bind.annotation.RequestMapping;

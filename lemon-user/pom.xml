@@ -63,6 +63,10 @@
 			</exclusions>
 		</dependency>
 		<!--内部公共模块-->
+		<dependency>
+			<groupId>org.lemon</groupId>
+			<artifactId>lemon-common-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
