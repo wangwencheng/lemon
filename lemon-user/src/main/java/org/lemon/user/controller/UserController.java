@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @RequestMapping(value = "test")
-    public R
-    test() {
+    public R test() {
         log.info("测试成功");
         return R.ok("测试成功");
     }

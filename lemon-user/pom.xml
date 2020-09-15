@@ -67,7 +67,11 @@
 			<groupId>org.lemon</groupId>
 			<artifactId>lemon-common-core</artifactId>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.lemon</groupId>
+            <artifactId>lemon-common-feign</artifactId>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
