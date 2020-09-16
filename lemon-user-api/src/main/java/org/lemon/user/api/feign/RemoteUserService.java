@@ -22,7 +22,7 @@ import java.util.Map;
  *
  * @author Ervin
  */
-@FeignClient(contextId = "remoteUserService", value = ServiceNameConstant.USER_SERVICE,url = "localhost:8080/user")
+@FeignClient(contextId = "remoteUserService", value = ServiceNameConstant.USER_SERVICE)
 public interface RemoteUserService {
 	/**
 	 * 通过用户名查询用户信息
