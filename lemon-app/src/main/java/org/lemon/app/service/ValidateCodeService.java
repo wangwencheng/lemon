@@ -4,7 +4,7 @@
 //
 ///**
 // * 验证码服务接口
-// * @author Donald
+// * @author wwc
 // */
 //public interface ValidateCodeService {
 //

@@ -15,7 +15,7 @@ import java.security.Principal;
 import java.util.Map;
 
 /**
- * @author Donald
+ * @author wwc
  */
 @RestController
 @RequestMapping("/oauth")

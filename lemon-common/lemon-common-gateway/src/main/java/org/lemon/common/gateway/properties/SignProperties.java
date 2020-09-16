@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * 签名配置
- * @author Donald
+ * @author wwc
  */
 @Data
 public class SignProperties {

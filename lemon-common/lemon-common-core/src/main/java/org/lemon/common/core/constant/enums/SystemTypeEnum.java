@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 系统类型
  *
- * @author Donald
+ * @author wwc
  */
 
 @AllArgsConstructor

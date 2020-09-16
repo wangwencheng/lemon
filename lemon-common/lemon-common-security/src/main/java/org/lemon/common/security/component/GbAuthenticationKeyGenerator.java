@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author Donald
+ * @author wwc
  */
 public class GbAuthenticationKeyGenerator extends DefaultAuthenticationKeyGenerator {
 	private static final String SCOPE = "scope";

@@ -2,7 +2,7 @@ package org.lemon.common.gateway.constant;
 
 /**
  * 错误消息常量
- * @author Donald
+ * @author wwc
  */
 public interface ErrorMsgConstant {
 

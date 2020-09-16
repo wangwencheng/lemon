@@ -19,7 +19,7 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 
 /**
  * 异常处理,重写oauth 默认实现
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class GbWebResponseExceptionTranslator implements WebResponseExceptionTranslator {
@@ -82,7 +82,7 @@ public class GbWebResponseExceptionTranslator implements WebResponseExceptionTra
 			return new ResponseEntity<>(e, headers,
 					HttpStatus.valueOf(status));
 		}
-		return new ResponseEntity<>(new GbAuth2Exception(e.getMessage(), e.getOAuth2ErrorCode()), headers,
+		return new ResponseEntity<>(new LemonAuth2Exception(e.getMessage(), e.getOAuth2ErrorCode()), headers,
 				HttpStatus.valueOf(status));
 
 	}

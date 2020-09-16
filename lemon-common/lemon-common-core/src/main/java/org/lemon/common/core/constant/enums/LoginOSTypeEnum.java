@@ -6,6 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum LoginOSTypeEnum {
+
 	ANDROID(1, "android"),
 	IOS(2, "ios"),
 	ANDROID_PAD(3, "android pad"),

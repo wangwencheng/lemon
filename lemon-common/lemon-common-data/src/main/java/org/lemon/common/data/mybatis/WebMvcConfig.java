@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.List;
 
 /**
- * @author Donald
+ * @author wwc
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {

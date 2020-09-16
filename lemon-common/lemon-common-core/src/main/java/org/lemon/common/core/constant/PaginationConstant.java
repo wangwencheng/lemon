@@ -2,7 +2,7 @@ package org.lemon.common.core.constant;
 
 /**
  * 分页相关的参数
- * @author Donald
+ * @author wwc
  */
 public interface PaginationConstant {
 	/**

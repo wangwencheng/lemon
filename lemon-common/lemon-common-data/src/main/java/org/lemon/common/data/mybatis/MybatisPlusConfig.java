@@ -19,41 +19,41 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * mybatis-plus配置
- * @author Donald
+ * @author wwc
  */
 @Configuration
 @ConditionalOnClass(DataSource.class)
 @AutoConfigureAfter(DataSourceAutoConfiguration.class)
-@Import(GbMetaObjectHandler.class)
+@Import(LemonMetaObjectHandler.class)
 public class MybatisPlusConfig {
 
 	/**
 	 * 创建租户维护处理器对象
 	 * @return
 	 */
-	@Bean
-	@ConditionalOnMissingBean
-	public GbTenantHandler gbTenantHandler() {
-		return new GbTenantHandler();
-	}
+//	@Bean
+//	@ConditionalOnMissingBean
+//	public GbTenantHandler gbTenantHandler() {
+//		return new GbTenantHandler();
+//	}
 
 	/**
 	 * 分页插件
 	 * @param tenantHandler
 	 * @return
 	 */
-	@Bean
-	@ConditionalOnMissingBean
-	@ConditionalOnProperty(name = "mybatisPlus.tenantEnable", havingValue = "true", matchIfMissing = true)
-	public PaginationInterceptor paginatiosnInterceptor(GbTenantHandler tenantHandler) {
-		PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
-		List<ISqlParser> sqlParserList = new ArrayList<>();
-		TenantSqlParser tenantSqlParser = new TenantSqlParser();
-		tenantSqlParser.setTenantHandler(tenantHandler);
-		sqlParserList.add(tenantSqlParser);
-		paginationInterceptor.setSqlParserList(sqlParserList);
-		return paginationInterceptor;
-	}
+//	@Bean
+//	@ConditionalOnMissingBean
+//	@ConditionalOnProperty(name = "mybatisPlus.tenantEnable", havingValue = "true", matchIfMissing = true)
+//	public PaginationInterceptor paginatiosnInterceptor(GbTenantHandler tenantHandler) {
+//		PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+//		List<ISqlParser> sqlParserList = new ArrayList<>();
+//		TenantSqlParser tenantSqlParser = new TenantSqlParser();
+//		tenantSqlParser.setTenantHandler(tenantHandler);
+//		sqlParserList.add(tenantSqlParser);
+//		paginationInterceptor.setSqlParserList(sqlParserList);
+//		return paginationInterceptor;
+//	}
 
 	/**
 	 * 乐观锁

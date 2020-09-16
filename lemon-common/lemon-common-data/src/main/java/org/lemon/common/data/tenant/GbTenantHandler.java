@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 租户维护处理器
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class GbTenantHandler implements TenantHandler {

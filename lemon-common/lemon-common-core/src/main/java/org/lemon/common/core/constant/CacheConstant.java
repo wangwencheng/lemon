@@ -2,7 +2,7 @@ package org.lemon.common.core.constant;
 
 /**
  * 缓存常量
- * @author Donald
+ * @author wwc
  */
 public interface CacheConstant {
 	/**

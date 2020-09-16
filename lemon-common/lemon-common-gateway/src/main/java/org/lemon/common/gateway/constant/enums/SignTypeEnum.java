@@ -5,7 +5,7 @@ import lombok.Getter;
 
 /**
  * 签名类型
- * @author Donald
+ * @author wwc
  */
 @Getter
 @AllArgsConstructor

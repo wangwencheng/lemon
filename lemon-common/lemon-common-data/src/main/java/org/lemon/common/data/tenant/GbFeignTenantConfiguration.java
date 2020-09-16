@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * feign租户信息拦截配置
- * @author Donald
+ * @author wwc
  */
 @Configuration
 public class GbFeignTenantConfiguration {

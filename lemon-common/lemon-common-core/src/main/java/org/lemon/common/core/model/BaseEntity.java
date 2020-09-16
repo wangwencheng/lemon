@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  * 基础实体类
- * @author Donald
+ * @author wwc
  */
 @Data
 public class BaseEntity<T extends Model<?>> extends Model<T> {

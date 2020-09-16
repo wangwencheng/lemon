@@ -15,7 +15,7 @@ import java.util.*;
 /**
  * 签名工具类
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class SignUtil {

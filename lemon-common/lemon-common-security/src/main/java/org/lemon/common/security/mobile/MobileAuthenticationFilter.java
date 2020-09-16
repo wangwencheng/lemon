@@ -22,7 +22,7 @@ import java.util.Optional;
 
 /**
  * 手机号登录验证filter
- * @author Donald
+ * @author wwc
  */
 public class MobileAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 	@Getter

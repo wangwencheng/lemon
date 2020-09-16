@@ -6,7 +6,7 @@ import lombok.Getter;
 /**
  * 字典类型
  *
- * @author Donald
+ * @author wwc
  */
 @Getter
 @AllArgsConstructor

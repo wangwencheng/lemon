@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 
 
 /**
- * @author Donald
+ * @author wwc
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

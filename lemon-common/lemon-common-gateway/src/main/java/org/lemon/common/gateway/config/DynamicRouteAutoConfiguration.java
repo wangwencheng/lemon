@@ -25,7 +25,7 @@ import java.time.Duration;
 
 /**
  * 动态路由配置类
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Configuration

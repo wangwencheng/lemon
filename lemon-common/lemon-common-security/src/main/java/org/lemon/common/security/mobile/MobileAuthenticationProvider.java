@@ -18,7 +18,7 @@ import org.springframework.security.core.userdetails.UserDetailsChecker;
  * 手机登录校验逻辑
  * 验证码登录、社交登录
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class MobileAuthenticationProvider implements AuthenticationProvider {

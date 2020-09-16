@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsChecker;
 
 
 /**
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class GbPreAuthenticationChecks implements UserDetailsChecker {

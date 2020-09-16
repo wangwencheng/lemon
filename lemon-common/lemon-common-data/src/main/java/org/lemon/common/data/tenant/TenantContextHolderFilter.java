@@ -18,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 租户请求过滤器
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
-@Component
+//@Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class TenantContextHolderFilter extends GenericFilterBean {
 

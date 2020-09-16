@@ -28,7 +28,7 @@ import java.io.PrintWriter;
 
 /**
  * 手机号登录成功，返回oauth token
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class MobileLoginSuccessHandler implements AuthenticationSuccessHandler {

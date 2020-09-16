@@ -4,7 +4,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 /**
  * 校验器
- * @author Donald
+ * @author wwc
  */
 public interface Checker {
 	 void check(ServerWebExchange exchange);

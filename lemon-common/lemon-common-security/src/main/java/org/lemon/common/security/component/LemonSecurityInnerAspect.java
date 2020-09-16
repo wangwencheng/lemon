@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 服务间接口不鉴权处理逻辑
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Aspect

@@ -10,7 +10,7 @@ import java.util.Collection;
 /**
  * 手机号登录令牌
  *
- * @author Donald
+ * @author wwc
  */
 public class MobileAuthenticationToken extends AbstractAuthenticationToken {
 

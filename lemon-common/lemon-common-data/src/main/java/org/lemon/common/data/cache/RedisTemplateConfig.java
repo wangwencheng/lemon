@@ -27,7 +27,7 @@ import java.time.Duration;
 
 /**
  * RedisTemplate配置
- * @author Donald
+ * @author wwc
  */
 @EnableCaching
 @Configuration

@@ -5,7 +5,7 @@ import lombok.experimental.UtilityClass;
 
 /**
  * 租户工具类
- * @author Donald
+ * @author wwc
  */
 @UtilityClass
 public class TenantContextHolder {

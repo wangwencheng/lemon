@@ -3,7 +3,7 @@ package org.lemon.common.core.constant;
 /**
  * 公共常量
  *
- * @author Donald
+ * @author wwc
  */
 public interface CommonConstant {
 	/**

@@ -2,7 +2,7 @@ package org.lemon.common.core.sensitive;
 
 /**
  * 敏感信息枚举类
- * @author Donald
+ * @author wwc
  **/
 public enum SensitiveTypeEnum {
 

@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * 扩展此类支持序列化
- * @author Donald
+ * @author wwc
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

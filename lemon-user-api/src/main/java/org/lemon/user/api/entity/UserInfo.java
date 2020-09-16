@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @author Donald
+ * @author wwc
  */
 @Data
 @TableName("user_info")

@@ -23,7 +23,7 @@
 ///**
 // * 运营管理后台用户信息获取
 // *
-// * @author Donald
+// * @author wwc
 // */
 //@Slf4j
 //@Component("OMS")

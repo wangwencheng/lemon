@@ -1,15 +1,15 @@
 package org.lemon.common.security.exception;
 
-import org.lemon.common.security.component.GbAuth2ExceptionSerializer;
+import org.lemon.common.security.component.LemonAuth2ExceptionSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.http.HttpStatus;
 
 
 /**
- * @author Donald
+ * @author wwc
  */
-@JsonSerialize(using = GbAuth2ExceptionSerializer.class)
-public class ForbiddenException extends GbAuth2Exception {
+@JsonSerialize(using = LemonAuth2ExceptionSerializer.class)
+public class ForbiddenException extends LemonAuth2Exception {
 
 	public ForbiddenException(String msg) {
 		super(msg);

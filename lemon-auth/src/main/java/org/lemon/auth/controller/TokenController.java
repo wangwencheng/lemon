@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Token模块
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Controller

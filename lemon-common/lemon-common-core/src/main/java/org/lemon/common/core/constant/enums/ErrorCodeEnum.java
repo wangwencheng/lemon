@@ -8,7 +8,7 @@ import lombok.Getter;
 /**
  * 系统返回码
  *
- * @author Donald
+ * @author wwc
  */
 @AllArgsConstructor
 @Getter

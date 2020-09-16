@@ -13,10 +13,10 @@ import java.util.Collection;
 
 /**
  * 扩展OAuth2FeignRequestInterceptor
- * @author Donald
+ * @author wwc
  */
 @Slf4j
-public class GbFeignClientInterceptor extends OAuth2FeignRequestInterceptor {
+public class LemonFeignClientInterceptor extends OAuth2FeignRequestInterceptor {
 	private final OAuth2ClientContext oAuth2ClientContext;
 	private final AccessTokenContextRelay accessTokenContextRelay;
 
@@ -28,7 +28,7 @@ public class GbFeignClientInterceptor extends OAuth2FeignRequestInterceptor {
 	 * @param resource                type of resource to be accessed
 	 * @param accessTokenContextRelay
 	 */
-	public GbFeignClientInterceptor(OAuth2ClientContext oAuth2ClientContext
+	public LemonFeignClientInterceptor(OAuth2ClientContext oAuth2ClientContext
 		, OAuth2ProtectedResourceDetails resource, AccessTokenContextRelay accessTokenContextRelay) {
 		super(oAuth2ClientContext, resource);
 		this.oAuth2ClientContext = oAuth2ClientContext;

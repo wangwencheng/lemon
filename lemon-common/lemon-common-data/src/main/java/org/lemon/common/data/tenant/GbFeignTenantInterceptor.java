@@ -7,7 +7,7 @@ import org.lemon.common.core.constant.CommonConstant;
 
 /**
  * feign租户信息拦截
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class GbFeignTenantInterceptor implements RequestInterceptor {

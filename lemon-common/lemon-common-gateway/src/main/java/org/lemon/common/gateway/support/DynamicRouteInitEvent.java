@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationEvent;
 
 /**
  * 路由初始化事件
- * @author Donald
+ * @author wwc
  */
 public class DynamicRouteInitEvent extends ApplicationEvent {
 	public DynamicRouteInitEvent(Object source) {

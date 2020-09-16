@@ -24,7 +24,7 @@ import java.util.Map;
 
 /**
  * 构造请求参数
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class GatewayParamBuilder implements ParamBuilder {

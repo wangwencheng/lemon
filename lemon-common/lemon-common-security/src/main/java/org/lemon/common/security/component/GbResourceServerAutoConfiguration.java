@@ -13,7 +13,7 @@ import java.io.IOException;
 
 
 /**
- * @author Donald
+ * @author wwc
  */
 @ComponentScan("org.elib.common.security")
 public class GbResourceServerAutoConfiguration {

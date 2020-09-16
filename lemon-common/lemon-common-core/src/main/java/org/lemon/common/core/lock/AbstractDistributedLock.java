@@ -2,7 +2,7 @@ package org.lemon.common.core.lock;
 
 /**
  * 分布式锁抽象类
- * @author Donald
+ * @author wwc
  */
 public abstract class AbstractDistributedLock implements DistributedLock {
 

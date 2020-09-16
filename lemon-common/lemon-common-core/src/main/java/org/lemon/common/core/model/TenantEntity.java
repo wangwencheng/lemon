@@ -6,7 +6,7 @@ import lombok.Data;
 
 /**
  * 租户基础实体类
- * @author Donald
+ * @author wwc
  */
 @Data
 public class TenantEntity<T extends Model<?>> extends BaseEntity<T> {

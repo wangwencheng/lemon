@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 业务异常
  *
- * @author Donald
+ * @author wwc
  */
 @Data
 public class BusinessException extends RuntimeException {

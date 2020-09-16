@@ -7,7 +7,7 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * RestTemplate
- * @author Donald
+ * @author wwc
  */
 @Configuration
 public class RestTemplateConfig {

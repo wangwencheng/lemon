@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * 1. 支持remoteTokenServices 负载均衡
  * 2. 支持 获取用户全部信息
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class GbResourceServerConfigurerAdapter extends ResourceServerConfigurerAdapter {

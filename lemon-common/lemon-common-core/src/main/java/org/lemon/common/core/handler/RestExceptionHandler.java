@@ -25,7 +25,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 /**
  * 处理可预见的异常
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE)

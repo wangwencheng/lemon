@@ -20,7 +20,7 @@ import java.util.Map;
  * redis cache 扩展cache name自动化配置
  * cachename = xx#ttl
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class RedisAutoCacheManager extends RedisCacheManager {

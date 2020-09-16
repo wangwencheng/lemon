@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * token增强，客户端模式不增强。
  *
- * @author Donald
+ * @author wwc
  */
 public class LemonTokenEnhancer implements TokenEnhancer {
 	/**

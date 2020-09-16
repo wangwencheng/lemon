@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * 认证授权相关工具类
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @UtilityClass
@@ -28,7 +28,7 @@ public class AuthUtil {
 	@SneakyThrows
 	public String[] extractAndDecodeHeader(String header) {
 
-		byte[] base64Token = header.substring(6).getBytes("UTF-8");
+		byte[] base64Token = header.substring(6).getBytes(StandardCharsets.UTF_8);
 		byte[] decoded;
 		try {
 			decoded = Base64.decode(base64Token);

@@ -18,7 +18,7 @@ import java.lang.annotation.*;
 
 /**
  * 注入AccessTokenContextRelay 解决feign 传递token 为空问题
- * @author Donald
+ * @author wwc
  */
 @Configuration
 @AutoConfigureAfter(OAuth2AutoConfiguration.class)

@@ -4,7 +4,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 /**
  * 结果执行器
- * @author Donald
+ * @author wwc
  */
 public interface ResultExecutor {
 

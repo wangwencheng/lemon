@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 @RefreshScope
 @ConfigurationProperties("ribbon.rule")
-public class GbRibbonRuleProperties {
+public class LemonRibbonRuleProperties {
 	/**
 	 * 是否开启，默认：true
 	 */

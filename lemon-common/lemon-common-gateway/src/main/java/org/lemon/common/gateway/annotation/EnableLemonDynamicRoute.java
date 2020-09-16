@@ -7,13 +7,13 @@ import java.lang.annotation.*;
 
 /**
  * 开启动态路由
- * @author Donald
+ * @author wwc
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
 @Import(DynamicRouteAutoConfiguration.class)
-public @interface EnableGbDynamicRoute {
+public @interface EnableLemonDynamicRoute {
 
 }

@@ -2,17 +2,13 @@ package org.lemon.common.security.service.impl;
 
 import cn.hutool.core.lang.Validator;
 import cn.hutool.core.util.StrUtil;
-import com.baomidou.mybatisplus.core.toolkit.StringPool;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.lemon.common.core.constant.CacheConstant;
 import org.lemon.common.core.constant.CommonConstant;
 import org.lemon.common.core.constant.SecurityConstant;
-import org.lemon.common.core.constant.enums.SystemTypeEnum;
 import org.lemon.common.core.exception.BusinessException;
 import org.lemon.common.core.util.R;
 import org.lemon.common.security.service.LemonUserService;
-import org.lemon.common.security.util.GbUser;
 import org.lemon.user.api.entity.UserInfo;
 import org.lemon.user.api.feign.RemoteUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +26,7 @@ import java.util.Collection;
 /**
  * APP用户信息获取
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Component("APP")

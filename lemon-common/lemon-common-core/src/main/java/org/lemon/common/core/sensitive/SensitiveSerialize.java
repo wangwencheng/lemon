@@ -15,7 +15,7 @@ import java.util.Objects;
 
 /**
  * 脱敏序列化
- * @author Donald
+ * @author wwc
  **/
 @NoArgsConstructor
 @AllArgsConstructor

@@ -1,28 +1,28 @@
 package org.lemon.common.security.exception;
 
-import org.lemon.common.security.component.GbAuth2ExceptionSerializer;
+import org.lemon.common.security.component.LemonAuth2ExceptionSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 
 /**
  * 自定义OAuth2Exception
- * @author Donald
+ * @author wwc
  */
-@JsonSerialize(using = GbAuth2ExceptionSerializer.class)
-public class GbAuth2Exception extends OAuth2Exception {
+@JsonSerialize(using = LemonAuth2ExceptionSerializer.class)
+public class LemonAuth2Exception extends OAuth2Exception {
 	@Getter
 	private String errorCode;
 
-	public GbAuth2Exception(String msg) {
+	public LemonAuth2Exception(String msg) {
 		super(msg);
 	}
 
-	public GbAuth2Exception(String msg, Throwable t) {
+	public LemonAuth2Exception(String msg, Throwable t) {
 		super(msg,t);
 	}
 
-	public GbAuth2Exception(String msg, String errorCode) {
+	public LemonAuth2Exception(String msg, String errorCode) {
 		super(msg);
 		this.errorCode = errorCode;
 	}

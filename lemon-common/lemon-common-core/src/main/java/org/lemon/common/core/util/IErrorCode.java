@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * 错误码接口
- * @author Donald
+ * @author wwc
  */
 public interface IErrorCode extends Serializable {
 

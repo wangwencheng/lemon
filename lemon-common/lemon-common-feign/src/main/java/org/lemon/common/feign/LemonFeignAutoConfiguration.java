@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 
 /**
  * feign 自动化配置
- * @author Donald
+ * @author wwc
  */
 @Configuration
 @ConditionalOnClass(Feign.class)

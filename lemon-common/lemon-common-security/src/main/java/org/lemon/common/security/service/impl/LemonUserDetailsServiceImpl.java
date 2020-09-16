@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * 用户详细信息
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Service(value = "LemonUserDetailsService")

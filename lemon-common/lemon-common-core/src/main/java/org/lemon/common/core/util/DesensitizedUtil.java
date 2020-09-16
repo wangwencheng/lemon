@@ -6,7 +6,7 @@ import cn.hutool.core.util.StrUtil;
 /**
  * 脱敏工具类
  *
- * @author Donald
+ * @author wwc
  */
 public class DesensitizedUtil {
 

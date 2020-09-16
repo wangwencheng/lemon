@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 多租户配置
- * @author Donald
+ * @author wwc
  */
 @Data
 @RefreshScope

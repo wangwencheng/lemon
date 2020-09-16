@@ -17,11 +17,11 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * java 8 时间默认序列化
- * @author Donald
+ * @author wwc
  */
-public class GbJavaTimeModule extends SimpleModule {
+public class LemonJavaTimeModule extends SimpleModule {
 
-	public GbJavaTimeModule() {
+	public LemonJavaTimeModule() {
 		super(PackageVersion.VERSION);
 		this.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DatePattern.NORM_DATETIME_PATTERN)));
 		this.addSerializer(LocalDate.class, new LocalDateSerializer(DateTimeFormatter.ofPattern(DatePattern.NORM_DATE_PATTERN)));

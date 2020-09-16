@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 
 /**
  * 资源服务器对外直接暴露URL,如果设置contex-path 要特殊处理
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Configuration

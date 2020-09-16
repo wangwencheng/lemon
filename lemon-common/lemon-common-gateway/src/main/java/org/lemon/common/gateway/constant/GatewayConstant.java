@@ -2,7 +2,7 @@ package org.lemon.common.gateway.constant;
 
 /**
  * 网关常量
- * @author Donald
+ * @author wwc
  */
 public interface GatewayConstant {
 	/**

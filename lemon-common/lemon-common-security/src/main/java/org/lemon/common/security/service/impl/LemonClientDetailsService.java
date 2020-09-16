@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 /**
  * see JdbcClientDetailsService
  *
- * @author Donald
+ * @author wwc
  */
 public class LemonClientDetailsService extends JdbcClientDetailsService {
 

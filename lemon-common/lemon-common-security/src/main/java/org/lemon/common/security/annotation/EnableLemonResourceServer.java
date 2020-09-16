@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 
 /**
  * 资源服务注解
- * @author Donald
+ * @author wwc
  */
 @Documented
 @Inherited

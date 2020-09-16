@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 /**
  * 解决Mybatis Plus Order By SQL注入问题
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class SqlFilterArgumentResolver implements HandlerMethodArgumentResolver {

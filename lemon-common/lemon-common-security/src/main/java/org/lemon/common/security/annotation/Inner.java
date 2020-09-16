@@ -4,7 +4,7 @@ import java.lang.annotation.*;
 
 /**
  * 服务调用鉴权注解
- * @author Donald
+ * @author wwc
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

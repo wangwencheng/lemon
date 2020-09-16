@@ -13,18 +13,18 @@ import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResour
 /**
  * fegin 配置增强
  *
- * @author Donald
+ * @author wwc
  */
 @Configuration
 @ConditionalOnClass(Feign.class)
-public class GbFeignConfiguration {
+public class LemonFeignConfiguration {
 
 	@Bean
 	@ConditionalOnProperty("security.oauth2.client.client-id")
 	public RequestInterceptor oauth2FeignRequestInterceptor(OAuth2ClientContext oAuth2ClientContext,
 															OAuth2ProtectedResourceDetails resource,
 															AccessTokenContextRelay accessTokenContextRelay) {
-		return new GbFeignClientInterceptor(oAuth2ClientContext, resource, accessTokenContextRelay);
+		return new LemonFeignClientInterceptor(oAuth2ClientContext, resource, accessTokenContextRelay);
 	}
 
 }

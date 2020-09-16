@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * 构造请求参数
- * @author Donald
+ * @author wwc
  */
 public interface ParamBuilder {
 

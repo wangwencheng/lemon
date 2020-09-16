@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * 防重放攻击配置
- * @author Donald
+ * @author wwc
  */
 @Data
 public class ReplayAttackProperties {

@@ -3,7 +3,7 @@ package org.lemon.common.core.constant;
 /**
  * 服务名称常量
  *
- * @author Donald
+ * @author wwc
  */
 public interface ServiceNameConstant {
 	/**

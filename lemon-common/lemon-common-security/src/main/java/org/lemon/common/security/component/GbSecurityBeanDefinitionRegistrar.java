@@ -9,7 +9,7 @@ import org.springframework.core.type.AnnotationMetadata;
 
 
 /**
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class GbSecurityBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {

@@ -15,7 +15,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 /**
  * 网关基础配置
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Configuration

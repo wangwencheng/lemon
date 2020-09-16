@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 网关校验器
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @AllArgsConstructor

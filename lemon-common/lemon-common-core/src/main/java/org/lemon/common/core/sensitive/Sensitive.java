@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 /**
  * 对象脱敏注解
- * @author Donald
+ * @author wwc
  **/
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

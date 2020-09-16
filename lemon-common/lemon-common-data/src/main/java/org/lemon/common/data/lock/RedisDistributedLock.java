@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * redis分布式锁实现
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 public class RedisDistributedLock extends AbstractDistributedLock {

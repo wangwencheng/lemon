@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  * 租户VO
- * @author Donald
+ * @author wwc
  */
 @Data
 public class TenantVo implements Serializable {
