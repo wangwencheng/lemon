@@ -2,4 +2,5 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   org.lemon.common.security.component.LemonTokenEnhancer,\
   org.lemon.common.security.component.LemonSecurityInnerAspect,\
   org.lemon.common.security.service.impl.LemonUserDetailsServiceImpl,\
-  org.lemon.common.security.service.impl.LemonAppUserServiceImpl
+  org.lemon.common.security.service.impl.LemonAppUserServiceImpl,\
+  org.springframework.security.oauth2.provider.token.RemoteTokenServices
