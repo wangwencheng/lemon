@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * @author wwc
  */
-public class GbAuthenticationKeyGenerator extends DefaultAuthenticationKeyGenerator {
+public class LemonAuthenticationKeyGenerator extends DefaultAuthenticationKeyGenerator {
 	private static final String SCOPE = "scope";
 	private static final String CLIENT_ID = "client_id";
 	private static final String USERNAME = "username";

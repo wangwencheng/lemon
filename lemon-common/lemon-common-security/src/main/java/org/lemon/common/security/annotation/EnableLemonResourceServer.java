@@ -1,7 +1,7 @@
 package org.lemon.common.security.annotation;
 
-import org.lemon.common.security.component.GbResourceServerAutoConfiguration;
-import org.lemon.common.security.component.GbSecurityBeanDefinitionRegistrar;
+import org.lemon.common.security.component.LemonResourceServerAutoConfiguration;
+import org.lemon.common.security.component.LemonSecurityBeanDefinitionRegistrar;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -18,7 +18,7 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@Import({GbResourceServerAutoConfiguration.class, GbSecurityBeanDefinitionRegistrar.class})
+@Import({LemonResourceServerAutoConfiguration.class, LemonSecurityBeanDefinitionRegistrar.class})
 public @interface EnableLemonResourceServer {
 
 }

@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsChecker;
  * @author wwc
  */
 @Slf4j
-public class GbPreAuthenticationChecks implements UserDetailsChecker {
+public class LemonPreAuthenticationChecks implements UserDetailsChecker {
 	private MessageSourceAccessor messages = SpringSecurityMessageSource.getAccessor();
 
 	@Override

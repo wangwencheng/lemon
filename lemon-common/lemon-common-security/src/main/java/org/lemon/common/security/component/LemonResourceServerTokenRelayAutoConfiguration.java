@@ -24,7 +24,7 @@ import java.lang.annotation.*;
 @AutoConfigureAfter(OAuth2AutoConfiguration.class)
 @ConditionalOnWebApplication
 @ConditionalOnProperty("security.oauth2.client.client-id")
-public class GbResourceServerTokenRelayAutoConfiguration {
+public class LemonResourceServerTokenRelayAutoConfiguration {
 
 	@Bean
 	public AccessTokenContextRelay accessTokenContextRelay(OAuth2ClientContext context) {

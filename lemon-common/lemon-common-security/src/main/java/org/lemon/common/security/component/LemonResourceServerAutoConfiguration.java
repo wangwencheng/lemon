@@ -15,8 +15,8 @@ import java.io.IOException;
 /**
  * @author wwc
  */
-@ComponentScan("org.elib.common.security")
-public class GbResourceServerAutoConfiguration {
+@ComponentScan("org.lemon.common.security")
+public class LemonResourceServerAutoConfiguration {
 	@Bean
 	@Primary
 	@LoadBalanced

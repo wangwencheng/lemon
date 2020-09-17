@@ -1,6 +1,6 @@
 package org.lemon.common.security.mobile;
 
-import org.lemon.common.security.component.GbPreAuthenticationChecks;
+import org.lemon.common.security.component.LemonPreAuthenticationChecks;
 import org.lemon.common.security.service.LemonUserDetailsService;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +23,7 @@ import org.springframework.security.core.userdetails.UserDetailsChecker;
 @Slf4j
 public class MobileAuthenticationProvider implements AuthenticationProvider {
 	private MessageSourceAccessor messages = SpringSecurityMessageSource.getAccessor();
-	private UserDetailsChecker detailsChecker = new GbPreAuthenticationChecks();
+	private UserDetailsChecker detailsChecker = new LemonPreAuthenticationChecks();
 
 	@Getter
 	@Setter

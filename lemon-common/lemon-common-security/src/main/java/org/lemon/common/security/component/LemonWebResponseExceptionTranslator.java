@@ -22,7 +22,7 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
  * @author wwc
  */
 @Slf4j
-public class GbWebResponseExceptionTranslator implements WebResponseExceptionTranslator {
+public class LemonWebResponseExceptionTranslator implements WebResponseExceptionTranslator {
 
 	private ThrowableAnalyzer throwableAnalyzer = new DefaultThrowableAnalyzer();
 

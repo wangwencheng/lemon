@@ -75,7 +75,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
      */
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/auth/pages/**","/auth/assets/**", "/auth/css/**", "/auth/images/**", "/auth/js/**");
+        web.ignoring().antMatchers("/pages/**","/assets/**", "/css/**", "/images/**", "/js/**");
     }
 
     @Bean

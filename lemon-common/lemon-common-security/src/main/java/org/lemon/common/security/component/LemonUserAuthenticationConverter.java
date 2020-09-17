@@ -28,7 +28,7 @@ import java.util.Optional;
  * @author wwc
  */
 @Slf4j
-public class GbUserAuthenticationConverter implements UserAuthenticationConverter {
+public class LemonUserAuthenticationConverter implements UserAuthenticationConverter {
 	private static final String N_A = "N/A";
 
 	/**

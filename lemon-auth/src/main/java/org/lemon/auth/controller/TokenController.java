@@ -20,18 +20,18 @@ import javax.servlet.http.HttpServletRequest;
  * @author wwc
  */
 @Slf4j
-@Controller
-@RequestMapping(value = "token")
+@RestController
+@RequestMapping("/token")
 public class TokenController {
     @Autowired
     private TokenStore tokenStore;
 
-    @RequestMapping(value = "toLogin")
-    public String login(HttpServletRequest request) {
-        return "/pages/login";
+    @RequestMapping("/toLogin")
+    public R login(HttpServletRequest request) {
+        return R.ok("测试成功");
     }
 
-    @RequestMapping(value = "test")
+    @RequestMapping("/test")
     public String test() {
         return "/pages/test";
     }

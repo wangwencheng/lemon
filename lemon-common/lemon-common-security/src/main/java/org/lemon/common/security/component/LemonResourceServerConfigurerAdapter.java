@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
  * @author wwc
  */
 @Slf4j
-public class GbResourceServerConfigurerAdapter extends ResourceServerConfigurerAdapter {
+public class LemonResourceServerConfigurerAdapter extends ResourceServerConfigurerAdapter {
 	@Autowired
 	protected ResourceAuthExceptionEntryPoint resourceAuthExceptionEntryPoint;
 	@Autowired
@@ -50,7 +50,7 @@ public class GbResourceServerConfigurerAdapter extends ResourceServerConfigurerA
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) {
 		DefaultAccessTokenConverter accessTokenConverter = new DefaultAccessTokenConverter();
-		UserAuthenticationConverter userTokenConverter = new GbUserAuthenticationConverter();
+		UserAuthenticationConverter userTokenConverter = new LemonUserAuthenticationConverter();
 		accessTokenConverter.setUserTokenConverter(userTokenConverter);
 
 		remoteTokenServices.setRestTemplate(lbRestTemplate);

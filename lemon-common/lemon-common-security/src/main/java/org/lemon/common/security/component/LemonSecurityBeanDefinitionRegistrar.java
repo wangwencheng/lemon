@@ -12,7 +12,7 @@ import org.springframework.core.type.AnnotationMetadata;
  * @author wwc
  */
 @Slf4j
-public class GbSecurityBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+public class LemonSecurityBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
 	/**
 	 * 根据注解值动态注入资源服务器的相关属性
 	 *
@@ -27,7 +27,7 @@ public class GbSecurityBeanDefinitionRegistrar implements ImportBeanDefinitionRe
 		}
 
 		GenericBeanDefinition beanDefinition = new GenericBeanDefinition();
-		beanDefinition.setBeanClass(GbResourceServerConfigurerAdapter.class);
+		beanDefinition.setBeanClass(LemonResourceServerConfigurerAdapter.class);
 		registry.registerBeanDefinition(SecurityConstant.RESOURCE_SERVER_CONFIGURER, beanDefinition);
 
 	}
