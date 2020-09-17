@@ -13,7 +13,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
 
 @SpringCloudApplication
 @EnableLemonFeignClients
-@EnableLemonResourceServer
+//@EnableLemonResourceServer
 public class UserApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UserApplication.class, args);
