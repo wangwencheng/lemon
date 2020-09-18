@@ -19,7 +19,7 @@ import java.io.IOException;
 public class LemonResourceServerAutoConfiguration {
 	@Bean
 	@Primary
-	@LoadBalanced
+	//@LoadBalanced
 	public RestTemplate lbRestTemplate() {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.setErrorHandler(new DefaultResponseErrorHandler() {

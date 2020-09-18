@@ -156,7 +156,7 @@ public interface SecurityConstant {
 	/**
 	 * 项目的license
 	 */
-	String ELIB_LICENSE = "made by elibrary";
+	String ELIB_LICENSE = "made by lemon";
 	/**
 	 * 激活字段 兼容外围系统接入
 	 */

@@ -54,8 +54,9 @@ public class LemonResourceServerConfigurerAdapter extends ResourceServerConfigur
 		accessTokenConverter.setUserTokenConverter(userTokenConverter);
 
 		remoteTokenServices.setRestTemplate(lbRestTemplate);
-		remoteTokenServices.setAccessTokenConverter(accessTokenConverter);
+		//remoteTokenServices.setAccessTokenConverter(accessTokenConverter);
 		resources.authenticationEntryPoint(resourceAuthExceptionEntryPoint)
-				.tokenServices(remoteTokenServices);
+				.tokenServices(remoteTokenServices)
+		        .resourceId("oauth2");
 	}
 }

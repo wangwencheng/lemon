@@ -33,10 +33,8 @@ public class LemonTokenEnhancer implements TokenEnhancer {
 
 		final Map<String, Object> additionalInfo = new HashMap<>(8);
 		User user = (User) authentication.getUserAuthentication().getPrincipal();
-		additionalInfo.put(SecurityConstant.DETAILS_USER_NO, user.getUsername());
 		additionalInfo.put(SecurityConstant.DETAILS_USERNAME, user.getUsername());
 		additionalInfo.put(SecurityConstant.DETAILS_MOBILE, user.getUsername());
-		additionalInfo.put(SecurityConstant.DETAILS_TENANT_ID, null);
 		additionalInfo.put(SecurityConstant.DETAILS_LICENSE, SecurityConstant.ELIB_LICENSE);
 		additionalInfo.put(SecurityConstant.ACTIVE, Boolean.TRUE);
 		((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);

@@ -1,26 +1,18 @@
 package org.lemon.common.security.component;
 
-import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.lemon.common.core.constant.CommonConstant;
 import org.lemon.common.core.constant.SecurityConstant;
-import org.lemon.common.security.exception.LemonAuth2Exception;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.SpringSecurityMessageSource;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.oauth2.provider.token.UserAuthenticationConverter;
 import org.springframework.util.StringUtils;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Optional;
 
 /**
  * 根据checktoken 的结果转化用户信息
@@ -56,12 +48,8 @@ public class LemonUserAuthenticationConverter implements UserAuthenticationConve
 	@Override
 	public Authentication extractAuthentication(Map<String, ?> map) {
 		if (map.containsKey(USERNAME)) {
-			validateTenantId(map);
 			Collection<? extends GrantedAuthority> authorities = getAuthorities(map);
-			String username = (String) map.get(USERNAME);
-			Long userNo = Long.valueOf(map.get(SecurityConstant.DETAILS_USER_NO).toString());
 			String mobile = (String) map.get(SecurityConstant.DETAILS_MOBILE);
-			Integer tenantId = (Integer) map.get(SecurityConstant.DETAILS_TENANT_ID);
 			User user = new User(mobile, N_A, true
 					, true, true, true, authorities);
 			return new UsernamePasswordAuthenticationToken(user, N_A, authorities);
@@ -80,26 +68,4 @@ public class LemonUserAuthenticationConverter implements UserAuthenticationConve
 		}
 		throw new IllegalArgumentException("Authorities must be either a String or a Collection");
 	}
-
-	private void validateTenantId(Map<String, ?> map){
-		String headerValue =  getCurrentTenantId();
-		Integer userValue = (Integer) map.get(SecurityConstant.DETAILS_TENANT_ID);
-		if(StrUtil.isNotBlank(headerValue) && !userValue.toString().equals(headerValue)){
-			log.warn("请求头中的租户ID({})和用户的租户ID({})不一致",headerValue,userValue);
-			throw new LemonAuth2Exception(SpringSecurityMessageSource.getAccessor().getMessage("AbstractUserDetailsAuthenticationProvider.badTenantId","Bad tenant ID"));
-		}
-	}
-
-	private Optional<HttpServletRequest> getCurrentHttpRequest() {
-		return Optional.ofNullable(RequestContextHolder.getRequestAttributes())
-				.filter(requestAttributes -> ServletRequestAttributes.class.isAssignableFrom(requestAttributes.getClass()))
-				.map(requestAttributes -> ((ServletRequestAttributes) requestAttributes))
-				.map(ServletRequestAttributes::getRequest);
-	}
-
-	private String getCurrentTenantId() {
-		return getCurrentHttpRequest().map(httpServletRequest -> httpServletRequest.getHeader(CommonConstant.TENANT_ID)).orElse(null);
-	}
-
-
 }
