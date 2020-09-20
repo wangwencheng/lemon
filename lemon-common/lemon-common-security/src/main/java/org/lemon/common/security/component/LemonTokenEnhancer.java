@@ -35,7 +35,7 @@ public class LemonTokenEnhancer implements TokenEnhancer {
 		User user = (User) authentication.getUserAuthentication().getPrincipal();
 		additionalInfo.put(SecurityConstant.DETAILS_USERNAME, user.getUsername());
 		additionalInfo.put(SecurityConstant.DETAILS_MOBILE, user.getUsername());
-		additionalInfo.put(SecurityConstant.DETAILS_LICENSE, SecurityConstant.ELIB_LICENSE);
+		additionalInfo.put(SecurityConstant.DETAILS_LICENSE, SecurityConstant.LEMON_LICENSE);
 		additionalInfo.put(SecurityConstant.ACTIVE, Boolean.TRUE);
 		((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);
 		return accessToken;

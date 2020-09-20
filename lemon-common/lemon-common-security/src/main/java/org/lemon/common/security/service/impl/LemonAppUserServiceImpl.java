@@ -45,7 +45,7 @@ public class LemonAppUserServiceImpl implements LemonUserService {
         R<UserInfo> result;
         if (Validator.isMobile(username)) {
             //手机号登录
-            result = remoteUserService.getByMobile(username);
+            result = remoteUserService.getByMobile(username,SecurityConstant.FROM_IN);
         } else {
             throw new BusinessException("目前暂时只支持手机登陆!");
         }

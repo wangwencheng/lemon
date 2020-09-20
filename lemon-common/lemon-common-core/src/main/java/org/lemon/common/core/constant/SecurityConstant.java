@@ -8,7 +8,7 @@ public interface SecurityConstant {
 	/**
 	 * 前缀
 	 */
-	String ELIB_PREFIX = "elib_";
+	String LEMON_PREFIX = "lemon_";
 	/**
 	 * oauth 相关前缀
 	 */
@@ -156,7 +156,7 @@ public interface SecurityConstant {
 	/**
 	 * 项目的license
 	 */
-	String ELIB_LICENSE = "made by lemon";
+	String LEMON_LICENSE = "made by lemon";
 	/**
 	 * 激活字段 兼容外围系统接入
 	 */

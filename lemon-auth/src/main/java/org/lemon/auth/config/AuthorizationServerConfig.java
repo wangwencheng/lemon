@@ -1,6 +1,7 @@
 package org.lemon.auth.config;
 
 import lombok.SneakyThrows;
+import org.lemon.common.security.component.LemonWebResponseExceptionTranslator;
 import org.lemon.common.security.service.impl.LemonUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +15,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
@@ -64,7 +64,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .userDetailsService(lemonUserService)
                 .authenticationManager(authenticationManager)
                 .reuseRefreshTokens(false)
-                .pathMapping("/oauth/confirm_access", "/token/confirm_access");
+                .pathMapping("/oauth/confirm_access", "/token/confirm_access")
+                .exceptionTranslator(new LemonWebResponseExceptionTranslator());
     }
 
     @Bean

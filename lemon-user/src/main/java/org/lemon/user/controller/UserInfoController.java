@@ -2,6 +2,7 @@ package org.lemon.user.controller;
 
 
 import org.lemon.common.core.util.R;
+import org.lemon.common.security.annotation.Inner;
 import org.lemon.user.api.entity.UserInfo;
 import org.lemon.user.service.IUserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class UserInfoController {
     @Autowired
     private IUserInfoService userInfoService;
 
+    @Inner
     @GetMapping("/mobile/info/{mobile}")
     R<UserInfo> getByMobile(@PathVariable("mobile") String mobile) {
         return R.ok(userInfoService.getByMobile(mobile));

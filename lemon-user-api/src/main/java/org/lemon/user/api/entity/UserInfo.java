@@ -16,8 +16,8 @@ public class UserInfo {
 	/**
 	 * 用户号
 	 */
-	@TableId(value = "user_no", type = IdType.INPUT)
-	private Long userNo;
+	@TableId(value = "user_id", type = IdType.INPUT)
+	private Long userId;
 	/**
 	 * 用户名
 	 */
@@ -43,11 +43,11 @@ public class UserInfo {
 	 */
 	@TableField(value = "user_status", insertStrategy = FieldStrategy.NOT_NULL, whereStrategy = FieldStrategy.NOT_EMPTY)
 	private Integer userStatus;
-	/**
-	 * 邮箱
-	 */
-	@TableField(value = "email", insertStrategy = FieldStrategy.NOT_NULL)
-	private String email;
+//	/**
+//	 * 邮箱
+//	 */
+//	@TableField(value = "email", insertStrategy = FieldStrategy.NOT_NULL)
+//	private String email;
 	/**
 	 * 昵称
 	 */
@@ -68,28 +68,10 @@ public class UserInfo {
 	 */
 	@TableField(value = "avatar", insertStrategy = FieldStrategy.NOT_NULL)
 	private String avatar;
-	/**
-	 * 生日
-	 */
-	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
-	@TableField(value = "birthday", insertStrategy = FieldStrategy.NOT_NULL)
-	private Date birthday;
-	/**
-	 * 个性签名
-	 */
-	@TableField(value = "signature", insertStrategy = FieldStrategy.NOT_NULL)
-	private String signature;
-	/**
-	 * 注册ip
-	 */
-	@TableField(value = "reg_ip", insertStrategy = FieldStrategy.NOT_NULL)
-	private String regIp;
-	/**
-	 * 注册方式:1-藏书馆
-	 */
-	@TableField(value = "reg_type", insertStrategy = FieldStrategy.NOT_NULL)
-	private Integer regType;
-
-	@TableField(value = "last_login_time", insertStrategy = FieldStrategy.NOT_NULL)
-	private Date lastLoginTime;
+//	/**
+//	 * 生日
+//	 */
+//	@JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd")
+//	@TableField(value = "birthday", insertStrategy = FieldStrategy.NOT_NULL)
+//	private Date birthday;
 }
