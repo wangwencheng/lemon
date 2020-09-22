@@ -273,7 +273,7 @@
             <properties>
                 <!-- 环境标识，需要与配置文件的名称相对应 -->
                 <profiles.active>dev</profiles.active>
-                <nacos.namespace>9e81ce34-155b-4779-a0e0-0ac7996a00be</nacos.namespace>
+                <nacos.namespace>fd5bbd4a-2af2-4a37-899f-9827ca7225e0</nacos.namespace>
             </properties>
             <activation>
                 <!-- 默认环境 -->
@@ -284,14 +284,14 @@
             <id>test</id>
             <properties>
                 <profiles.active>test</profiles.active>
-                <nacos.namespace>1fc949b7-6148-4693-8b70-12b648fe36e8</nacos.namespace>
+                <nacos.namespace>6e21f53f-6434-457d-a852-9fcb15ef4bd3</nacos.namespace>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <profiles.active>prod</profiles.active>
-                <nacos.namespace>285f2ac6-cdd0-468a-bb41-1fa0f2e4b743</nacos.namespace>
+                <nacos.namespace>167467ed-d9b2-4668-a654-42bd96832c56</nacos.namespace>
             </properties>
         </profile>
     </profiles>
