@@ -57,12 +57,12 @@ public class RedisAutoCacheManager extends RedisCacheManager {
 	 * @param name
 	 * @return
 	 */
-	@Override
-	public Cache getCache(String name) {
-		if (name.startsWith(CacheConstant.GLOBALLY)) {
-			return super.getCache(name);
-		}
-		return super.getCache(TenantContextHolder.getTenantId() + StrUtil.COLON + name);
-	}
+//	@Override
+//	public Cache getCache(String name) {
+//		if (name.startsWith(CacheConstant.GLOBALLY)) {
+//			return super.getCache(name);
+//		}
+//		return super.getCache(TenantContextHolder.getTenantId() + StrUtil.COLON + name);
+//	}
 
 }

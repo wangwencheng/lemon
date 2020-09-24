@@ -85,15 +85,6 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-//	@Bean
-//	public AuthenticationSuccessHandler mobileLoginSuccessHandler() {
-//		return new MobileLoginSuccessHandler();
-//	}
-//
-//	@Bean
-//	public MobileSecurityConfigurer mobileSecurityConfigurer() {
-//		return new MobileSecurityConfigurer();
-//	}
 
     /**
      * https://spring.io/blog/2017/11/01/spring-security-5-0-0-rc1-released#password-storage-updated

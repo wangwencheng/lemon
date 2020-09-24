@@ -2,6 +2,7 @@ package org.lemon.auth.config;
 
 import lombok.SneakyThrows;
 import org.lemon.common.security.component.LemonWebResponseExceptionTranslator;
+import org.lemon.common.security.service.impl.LemonClientDetailsService;
 import org.lemon.common.security.service.impl.LemonUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -44,7 +45,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     @SneakyThrows
     public void configure(ClientDetailsServiceConfigurer clients) {
-        clients.withClientDetails(clientDetailsService());
+        clients.withClientDetails(lemonClientDetailsService());
     }
 
     @Override
@@ -73,7 +74,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         return new RedisTokenStore(redisConnectionFactory);
     }
 
-    public ClientDetailsService clientDetailsService() {
-        return new JdbcClientDetailsService(dataSource);
+    public ClientDetailsService lemonClientDetailsService() {
+        return new LemonClientDetailsService(dataSource);
     }
 }

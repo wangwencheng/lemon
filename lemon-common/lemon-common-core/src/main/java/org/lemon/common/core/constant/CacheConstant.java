@@ -34,7 +34,7 @@ public interface CacheConstant {
 	/**
 	 * oauth 客户端信息
 	 */
-	String CLIENT_DETAILS_KEY = "elib_oauth:client:details";
+	String CLIENT_DETAILS_KEY = "lemon_oauth:client:details";
 	/**
 	 * 用户信息缓存
 	 */
