@@ -53,8 +53,8 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                         "/pages/login.html").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .csrf().disable();
-               // .apply(mobileSecurityConfigurer());
+                .csrf().disable()
+                .apply(mobileSecurityConfigurer());
     }
 
 

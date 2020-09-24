@@ -1,5 +1,6 @@
 package org.lemon.user.service;
 
+import org.lemon.common.core.service.BaseService;
 import org.lemon.common.core.util.R;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.lemon.user.api.entity.UserInfo;
@@ -12,7 +13,7 @@ import org.lemon.user.api.entity.UserInfo;
  * @author Ervin.Wang
  * @since 2020-09-17
  */
-public interface IUserInfoService{
+public interface IUserInfoService extends BaseService<UserInfo> {
 
     UserInfo getByMobile(String mobile);
 }

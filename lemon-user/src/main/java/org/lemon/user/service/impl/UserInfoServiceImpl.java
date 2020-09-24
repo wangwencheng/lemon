@@ -2,6 +2,7 @@ package org.lemon.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import org.lemon.common.core.service.impl.BaseServiceImpl;
 import org.lemon.common.core.util.R;
 import org.lemon.user.api.entity.UserInfo;
 import org.lemon.user.mapper.UserInfoMapper;
@@ -18,7 +19,7 @@ import org.springframework.stereotype.Service;
  * @since 2020-09-17
  */
 @Service
-public class UserInfoServiceImpl implements IUserInfoService {
+public class UserInfoServiceImpl extends BaseServiceImpl<UserInfoMapper, UserInfo> implements IUserInfoService {
     @Autowired
     private UserInfoMapper userInfoMapper;
 
