@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * 手机验证码登录
  *
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Component("SMS")

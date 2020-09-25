@@ -9,6 +9,7 @@ import org.lemon.user.api.entity.UserInfo;
 import org.lemon.user.handler.LoginHandler;
 import org.lemon.user.mapper.UserInfoMapper;
 import org.lemon.user.service.SocialService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -16,12 +17,12 @@ import java.util.Map;
 /**
  * 用户服务实现
  *
- * @author Donald
+ * @author wwc
  */
-@AllArgsConstructor
 @Service
 public class SocialServiceImpl extends BaseServiceImpl<UserInfoMapper, UserInfo> implements SocialService {
-	private final Map<String, LoginHandler> loginHandlerMap;
+	@Autowired
+	private  Map<String, LoginHandler> loginHandlerMap;
 
 	/**
 	 * 通过手机号、第三方标识获取用户信息

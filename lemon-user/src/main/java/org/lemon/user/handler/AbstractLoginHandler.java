@@ -4,7 +4,7 @@ import org.lemon.user.api.entity.UserInfo;
 
 /**
  * 抽象登录处理器
- * @author Donald
+ * @author wwc
  */
 public abstract class AbstractLoginHandler implements LoginHandler {
 

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 微信登录
- * @author Donald
+ * @author wwc
  */
 @Slf4j
 @Component("WX")

@@ -5,7 +5,7 @@ import org.lemon.user.api.entity.UserInfo;
 
 /**
  * 社交登录服务接口
- * @author Donald
+ * @author wwc
  */
 public interface SocialService extends BaseService<UserInfo> {
 

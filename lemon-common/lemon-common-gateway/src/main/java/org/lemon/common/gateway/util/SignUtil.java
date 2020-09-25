@@ -24,14 +24,14 @@ public class SignUtil {
 		HashMap<String, String> signMap = new HashMap<String, String>();
 //		JSONObject js = new JSONObject();
 //		js.put("id", "1");
-//		js.put("author", "Donald");
+//		js.put("author", "wwc");
 //		js.put("moduleName", "global");
 //		js.put("packageName", "org.elib");
 //		js.put("tableName", "tenant_info");
 //		js.put("tablePrefix", "tenant_");
 
 //		signMap.put("id", "1");
-//		signMap.put("author", "Donald");
+//		signMap.put("author", "wwc");
 //		signMap.put("moduleName", "global");
 //		signMap.put("packageName", "org.elib");
 //		signMap.put("tableName", "tenant_info");
@@ -43,7 +43,7 @@ public class SignUtil {
 //		signMap.put("scope", "app");
 //		signMap.put("deviceId", "123456");
 
-		signMap.put("params", "{\"tablePrefix\":\"tenant_\",\"author\":\"Donald\",\"moduleName\":\"global\",\"id\":1,\"packageName\":\"org.elib\",\"tableName\":\"tenant_info\"}");
+		signMap.put("params", "{\"tablePrefix\":\"tenant_\",\"author\":\"wwc\",\"moduleName\":\"global\",\"id\":1,\"packageName\":\"org.elib\",\"tableName\":\"tenant_info\"}");
 		signMap.put("timestamp", String.valueOf(System.currentTimeMillis()));
 		signMap.put("nonce", RandomUtil.randomString(16));
 		System.out.println(signMap);

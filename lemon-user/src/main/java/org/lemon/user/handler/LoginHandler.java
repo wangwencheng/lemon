@@ -4,7 +4,7 @@ import org.lemon.user.api.entity.UserInfo;
 
 /**
  * 登录处理器
- * @author Donald
+ * @author wwc
  */
 public interface LoginHandler {
 	/***
