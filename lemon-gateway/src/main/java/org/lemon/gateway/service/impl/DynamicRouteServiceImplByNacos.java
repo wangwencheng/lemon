@@ -26,6 +26,8 @@ import static org.lemon.gateway.constant.Constant.DEFAULT_TIMEOUT;
 public class DynamicRouteServiceImplByNacos {
     @Value("${spring.cloud.nacos.discovery.server-addr}")
     private String serverAddr;
+    @Value("${spring.cloud.nacos.discovery.namespace}")
+    private String namespace;
     @Autowired
     private DynamicRouteServiceImpl dynamicRouteService;
 
@@ -33,7 +35,7 @@ public class DynamicRouteServiceImplByNacos {
     @PostConstruct
     public void DynamicRouteServiceImplByNacos() {
         log.info("gateway route init...");
-        ConfigService configService = NacosFactory.createConfigService(serverAddr);
+        ConfigService configService = initConfigService();
         if (Objects.isNull(configService)) {
             log.warn("initConfigService fail");
             return;
@@ -53,7 +55,7 @@ public class DynamicRouteServiceImplByNacos {
      */
     public void dynamicRouteByNacosListener(String dataId, String group) {
         try {
-            ConfigService configService = NacosFactory.createConfigService(serverAddr);
+            ConfigService configService = initConfigService();
             configService.addListener(dataId, group, new Listener() {
                 @Override
                 public void receiveConfigInfo(String configInfo) {
@@ -72,6 +74,9 @@ public class DynamicRouteServiceImplByNacos {
     }
 
     private ConfigService initConfigService() throws NacosException {
-        return NacosFactory.createConfigService(serverAddr);
+        Properties properties = new Properties();
+        properties.put("serverAddr", serverAddr);
+        properties.put("namespace", namespace);
+        return NacosFactory.createConfigService(properties);
     }
 }

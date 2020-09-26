@@ -21,7 +21,6 @@ import org.springframework.data.redis.core.RedisTemplate;
  */
 @Slf4j
 @Configuration
-@ComponentScan("org.elib.common.gateway")
 public class GatewayAutoConfiguration {
     @Autowired
     private ApiProperties properties;

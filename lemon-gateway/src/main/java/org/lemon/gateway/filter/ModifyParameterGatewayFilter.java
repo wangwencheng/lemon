@@ -18,7 +18,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpRequestDecorator;
-import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserter;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.server.ServerWebExchange;
@@ -42,7 +41,7 @@ public class ModifyParameterGatewayFilter implements Ordered, GlobalFilter {
 	private ParamBuilder paramBuilder;
 
 	@Override
-	public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+	public Mono filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 		Map<String, String> params = new HashMap<String, String>();
 		// 重写请求参数
 		try {
@@ -59,7 +58,7 @@ public class ModifyParameterGatewayFilter implements Ordered, GlobalFilter {
 				ServerHttpRequest request = exchange.getRequest().mutate().uri(newUri).build();
 				return chain.filter(exchange.mutate().request(request).build());
 			} catch (RuntimeException ex) {
-				throw new IllegalStateException("Invalid URI query: \"" + query.toString() + "\"");
+				throw new IllegalStateException("Invalid URI query: \"" + query + "\"");
 			}
 		}
 

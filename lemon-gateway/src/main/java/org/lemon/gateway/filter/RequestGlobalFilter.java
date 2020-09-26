@@ -44,7 +44,7 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.a
  *
  * @author wwc
  */
-//@Component
+//Component
 @Slf4j
 public class RequestGlobalFilter implements GlobalFilter, Ordered {
 	@Autowired

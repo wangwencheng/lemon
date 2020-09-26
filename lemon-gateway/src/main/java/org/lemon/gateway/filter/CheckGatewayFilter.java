@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
  *
  * @author wwc
  */
-//@Component
+@Component
 @AllArgsConstructor
 public class CheckGatewayFilter implements Ordered, GlobalFilter {
 	private Checker gatewayChecker;

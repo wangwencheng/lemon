@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
  *
  * @author wwc
  */
-//@Component
+@Component
 public class TraceFilter implements GlobalFilter, Ordered {
 
 	@Override

@@ -28,7 +28,7 @@ import java.util.Map;
  *
  * @author wwc
  */
-//@Component
+@Component
 public class CacheBodyGatewayFilter implements Ordered, GlobalFilter {
 
 	private static final List<HttpMessageReader<?>> messageReaders = HandlerStrategies.withDefaults().messageReaders();
@@ -44,27 +44,23 @@ public class CacheBodyGatewayFilter implements Ordered, GlobalFilter {
 		MediaType contentType = headers.getContentType();
 		if (headers.getContentLength() > 0) {
 			if (MediaType.APPLICATION_JSON.isCompatibleWith(contentType)) {
-				return ServerWebExchangeUtils.cacheRequestBodyAndRequest(exchange, (serverHttpRequest) -> {
-					return ServerRequest.create(exchange.mutate().request(serverHttpRequest).build(), messageReaders).bodyToMono(String.class).doOnNext((objectValue) -> {
-						if (objectValue != null) {
-							gatewayContext.setRequestBody(objectValue);
-							gatewayContext.getAllRequestData().setAll(JSONObject.parseObject(objectValue, new TypeReference<Map<String, String>>() {
-							}));
-						}
-					});
-				}).then(chain.filter(exchange));
+				return ServerWebExchangeUtils.cacheRequestBodyAndRequest(exchange, (serverHttpRequest) -> ServerRequest.create(exchange.mutate().request(serverHttpRequest).build(), messageReaders).bodyToMono(String.class).doOnNext((objectValue) -> {
+					if (objectValue != null) {
+						gatewayContext.setRequestBody(objectValue);
+						gatewayContext.getAllRequestData().setAll(JSONObject.parseObject(objectValue, new TypeReference<Map<String, String>>() {
+						}));
+					}
+				})).then(chain.filter(exchange));
 			}
 
 			if (MediaType.APPLICATION_FORM_URLENCODED.isCompatibleWith(contentType)) {
-				return ServerWebExchangeUtils.cacheRequestBodyAndRequest(exchange, (serverHttpRequest) -> {
-					return ServerRequest.create(exchange.mutate().request(serverHttpRequest).build(), messageReaders).bodyToMono(String.class).doOnNext((objectValue) -> {
-						if (objectValue != null) {
-							MultiValueMap multiValueMap = RequestUtil.parseQueryToMap(objectValue);
-							gatewayContext.setFormData(multiValueMap);
-							gatewayContext.getAllRequestData().addAll(multiValueMap);
-						}
-					});
-				}).then(chain.filter(exchange));
+				return ServerWebExchangeUtils.cacheRequestBodyAndRequest(exchange, (serverHttpRequest) -> ServerRequest.create(exchange.mutate().request(serverHttpRequest).build(), messageReaders).bodyToMono(String.class).doOnNext((objectValue) -> {
+					if (objectValue != null) {
+						MultiValueMap multiValueMap = RequestUtil.parseQueryToMap(objectValue);
+						gatewayContext.setFormData(multiValueMap);
+						gatewayContext.getAllRequestData().addAll(multiValueMap);
+					}
+				})).then(chain.filter(exchange));
 			}
 		}
 		return chain.filter(exchange);

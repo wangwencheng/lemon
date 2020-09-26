@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.lemon.common.core.constant.CacheConstant;
-import org.lemon.common.core.constant.CommonConstant;
 import org.lemon.common.core.constant.SecurityConstant;
 import org.lemon.common.core.constant.enums.LoginTypeEnum;
 import org.lemon.common.core.util.R;
