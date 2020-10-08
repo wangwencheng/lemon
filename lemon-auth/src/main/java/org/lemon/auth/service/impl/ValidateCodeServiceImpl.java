@@ -63,10 +63,9 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
             code = codeObj.toString();
         } else {
             code = RandomUtil.randomNumbers(Integer.parseInt(SecurityConstant.CODE_SIZE));
-            log.info("手机号生成验证码成功:{},{}", mobile, code);
             redisTemplate.opsForValue().set(key, code, SecurityConstant.CODE_TIME, TimeUnit.SECONDS);
         }
-
+        log.info("手机号生成验证码成功:{},{}", mobile, code);
         redisTemplate.opsForValue().setIfAbsent(key + StringPool.AT + SecurityConstant.CODE_INTERVAL_NAME, Boolean.TRUE, SecurityConstant.CODE_INTERVAL, TimeUnit.SECONDS);
         //remoteSmsService.sentSms(SecurityConstant.FROM_IN, mobile, "Login", code);
         return R.ok(Boolean.TRUE, "验证码发送成功");
