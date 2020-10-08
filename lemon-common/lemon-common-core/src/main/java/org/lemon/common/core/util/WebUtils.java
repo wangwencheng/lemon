@@ -199,7 +199,7 @@ public class WebUtils extends org.springframework.web.util.WebUtils {
 		if (header == null || !header.startsWith(BASIC_)) {
 			throw new RuntimeException("请求头中client信息为空");
 		}
-		byte[] base64Token = header.substring(6).getBytes("UTF-8");
+		byte[] base64Token = header.substring(6).getBytes(StandardCharsets.UTF_8);
 		byte[] decoded;
 		try {
 			decoded = Base64.decode(base64Token);
