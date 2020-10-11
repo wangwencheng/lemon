@@ -35,7 +35,7 @@ public class GatewayParamBuilder implements ParamBuilder {
 
 	@Override
 	public Map<String,String> build(ServerWebExchange exchange) {
-		Map<String, String> originalParams = new HashMap<String, String>();
+		Map<String, String> originalParams = new HashMap<>();
 		GatewayContext gatewayContext = exchange.getAttribute(GatewayConstant.CACHE_GATEWAY_CONTEXT);
 		if (gatewayContext != null) {
 			originalParams = gatewayContext.getAllRequestData().toSingleValueMap();

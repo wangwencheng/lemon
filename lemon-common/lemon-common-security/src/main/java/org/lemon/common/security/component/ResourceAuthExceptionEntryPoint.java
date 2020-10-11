@@ -32,6 +32,7 @@ public class ResourceAuthExceptionEntryPoint implements AuthenticationEntryPoint
 	@SneakyThrows
 	public void commence(HttpServletRequest request, HttpServletResponse response,
 						 AuthenticationException authException) {
+		log.info("AuthenticationException鉴权异常",authException);
 		response.setCharacterEncoding(CommonConstant.UTF8);
 		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 		R<String> result = new R<>();

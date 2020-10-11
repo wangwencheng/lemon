@@ -44,13 +44,9 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.a
  *
  * @author wwc
  */
-//Component
+@Component
 @Slf4j
 public class RequestGlobalFilter implements GlobalFilter, Ordered {
-	@Autowired
-	private RedisTemplate redisTemplate;
-
-	private static final String DOMAIN_SECOND = "([a-zA-Z0-9\\-]*\\.?){2}\\.(com\\.cn|net\\.cn|gov\\.cn|org\\.nz|org\\.cn|com|net|org|gov|cc|biz|info|cn|co|me)";
 
 	public RequestGlobalFilter() {
 		log.info("Loaded GlobalFilter [Request]");
@@ -80,30 +76,6 @@ public class RequestGlobalFilter implements GlobalFilter, Ordered {
 				.path(newPath)
 				.build();
 		exchange.getAttributes().put(GATEWAY_REQUEST_URL_ATTR, newRequest.getURI());
-
-		//3. 获取租户ID写入请求头中
-		String url = exchange.getRequiredAttribute(GATEWAY_REQUEST_URL_ATTR).toString();
-		Pattern pattern = Pattern.compile(DOMAIN_SECOND);
-		Matcher matcher = pattern.matcher(URLUtil.url(url).getHost());
-		String domain = "";
-		if (matcher.find()) {
-			domain = matcher.group(0);
-		}
-		domain = StrUtil.subBefore(domain, StringPool.DOT, false);
-		redisTemplate.setKeySerializer(new StringRedisSerializer());
-		redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-		redisTemplate.setHashValueSerializer(new Jackson2JsonRedisSerializer<>(TenantVo.class));
-		TenantVo tenantVo = (TenantVo) redisTemplate.opsForHash().get(CacheConstant.TENANT_KEY, domain);
-		if (tenantVo != null) {
-			request.mutate().headers(httpHeaders -> httpHeaders.add(CommonConstant.TENANT_ID, tenantVo.getTenantId().toString()));
-		} else {
-			log.info("租户信息匹配失败:{}", domain);
-			ServerHttpResponse response = exchange.getResponse();
-			byte[] bytes = JSONUtil.toJsonStr(R.failed(String.format("租户信息匹配失败:%s", domain))).getBytes(StandardCharsets.UTF_8);
-			DataBuffer buffer = response.bufferFactory().wrap(bytes);
-			response.getHeaders().add("Content-Type", "application/json;charset=utf-8");
-			return response.writeWith(Mono.just(buffer));
-		}
 
 		return chain.filter(exchange.mutate().request(newRequest.mutate().build()).build());
 	}

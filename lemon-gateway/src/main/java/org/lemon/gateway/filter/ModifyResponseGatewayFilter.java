@@ -24,6 +24,8 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Objects;
+
 import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.ORIGINAL_RESPONSE_CONTENT_TYPE_ATTR;
 
 /**
@@ -67,9 +69,7 @@ public class ModifyResponseGatewayFilter implements GlobalFilter, Ordered {
 
 				ClientResponse clientResponse = prepareClientResponse(body, httpHeaders);
 
-				Mono modifiedBody = clientResponse.bodyToMono(inClass).flatMap(originalBody -> {
-					return Mono.just(resultExecutor.mergeResult(exchange, String.valueOf(originalBody)));
-				});
+				Mono modifiedBody = clientResponse.bodyToMono(inClass).flatMap(originalBody -> Mono.just(resultExecutor.mergeResult(exchange, String.valueOf(originalBody))));
 
 				BodyInserter bodyInserter = BodyInserters.fromPublisher(modifiedBody, outClass);
 				CachedBodyOutputMessage outputMessage = new CachedBodyOutputMessage(exchange, exchange.getResponse().getHeaders());
@@ -92,9 +92,9 @@ public class ModifyResponseGatewayFilter implements GlobalFilter, Ordered {
 			private ClientResponse prepareClientResponse(Publisher<? extends DataBuffer> body, HttpHeaders httpHeaders) {
 				ClientResponse.Builder builder;
 				if (codecConfigurer != null) {
-					builder = ClientResponse.create(exchange.getResponse().getStatusCode(), codecConfigurer.getReaders());
+					builder = ClientResponse.create(Objects.requireNonNull(exchange.getResponse().getStatusCode()), codecConfigurer.getReaders());
 				} else {
-					builder = ClientResponse.create(exchange.getResponse().getStatusCode());
+					builder = ClientResponse.create(Objects.requireNonNull(exchange.getResponse().getStatusCode()));
 				}
 				return builder.headers(headers -> headers.putAll(httpHeaders)).body(Flux.from(body)).build();
 			}
