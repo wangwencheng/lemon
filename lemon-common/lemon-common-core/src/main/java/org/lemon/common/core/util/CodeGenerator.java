@@ -47,7 +47,7 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir("D:\\IDEAWORKSPACE\\lemon\\lemon-user\\src\\main\\java");
+        gc.setOutputDir("E:\\IDEAWORKSPACE\\lemon\\lemon-app\\src\\main\\java");
         gc.setAuthor("Ervin.Wang");
         gc.setOpen(false);
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
@@ -64,7 +64,7 @@ public class CodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("org.lemon.user");
+        pc.setParent("org.lemon.app");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -87,7 +87,7 @@ public class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return "D:/IDEAWORKSPACE/lemon/lemon-user/src/main/resources/mapper/"
+                return "E:/IDEAWORKSPACE/lemon/lemon-app/src/main/resources/mapper/"
                         + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -110,16 +110,16 @@ public class CodeGenerator {
         mpg.setCfg(cfg);
 
         // 配置模板
-    //    TemplateConfig templateConfig = new TemplateConfig();
+        TemplateConfig templateConfig = new TemplateConfig();
 
-        // 配置自定义输出模板
-        //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
-     //   templateConfig.setEntity("templates/entity2.java");
+//         配置自定义输出模板
+//        指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
+//        templateConfig.setEntity("templates/entity2.java");
 //        templateConfig.setService();
 //        templateConfig.setController();
 
-    //    templateConfig.setXml(null);
-      //  mpg.setTemplate(templateConfig);
+        templateConfig.setXml(null);
+        mpg.setTemplate(templateConfig);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
@@ -132,7 +132,7 @@ public class CodeGenerator {
         //strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
         //strategy.setSuperEntityColumns("id");
-        strategy.setInclude("user_info");
+        strategy.setInclude("app_button");
         strategy.setControllerMappingHyphenStyle(true);
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
