@@ -1,8 +1,10 @@
 package org.lemon.user.controller;
 
 
+import io.swagger.annotations.ApiOperation;
 import org.lemon.common.core.util.R;
 import org.lemon.common.security.annotation.Inner;
+import org.lemon.user.api.dto.response.UserInfoDTO;
 import org.lemon.user.api.entity.UserInfo;
 import org.lemon.user.service.IUserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +32,10 @@ public class UserInfoController {
         return R.ok(userInfoService.getByMobile(mobile));
     }
 
+    @Inner(false)
+    @ApiOperation(value = "根据token获取用户个人信息")
+    @GetMapping("info")
+    public R<UserInfoDTO> info() {
+        return userInfoService.info();
+    }
 }

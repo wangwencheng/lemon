@@ -142,6 +142,14 @@ public interface SecurityConstant {
 	 */
 	String DETAILS_USERNAME = "username";
 	/**
+	 * 用户头像
+	 */
+	String DETAILS_AVATAR = "avatar";
+	/**
+	 * 用户头像
+	 */
+	String DETAILS_NICKNAME = "nickname";
+	/**
 	 * 手机号字段
 	 */
 	String DETAILS_MOBILE = "mobile";
