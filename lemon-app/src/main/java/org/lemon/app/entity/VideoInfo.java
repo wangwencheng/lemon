@@ -31,6 +31,8 @@ public class VideoInfo extends CommonPageRequest implements Serializable {
 
     private Integer videoType;
 
+    private String videoThumbnail;
+
     private String videoSource;
 
     private Integer recStatus;

@@ -36,7 +36,7 @@ public class AppButton implements Serializable {
     /**
      * banner跳转链接
      */
-    private String buttonLocation;
+    private String buttonType;
 
     /**
      * 是否内部banner
