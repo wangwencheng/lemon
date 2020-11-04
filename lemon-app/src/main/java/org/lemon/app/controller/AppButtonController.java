@@ -4,6 +4,7 @@ package org.lemon.app.controller;
 import com.baomidou.mybatisplus.extension.api.R;
 import org.lemon.app.entity.AppButton;
 import org.lemon.app.service.IAppButtonService;
+import org.lemon.common.security.annotation.Inner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import java.util.List;
  * @author Ervin.Wang
  * @since 2020-10-28
  */
+@Inner
 @RestController
 @RequestMapping("button")
 public class AppButtonController {

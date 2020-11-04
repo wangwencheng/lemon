@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.lemon.app.entity.VideoInfo;
 import org.lemon.app.service.IVideoInfoService;
+import org.lemon.common.security.annotation.Inner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Ervin.Wang
  * @since 2020-11-02
  */
+@Inner
 @RestController
 @RequestMapping("video")
 public class VideoInfoController {
@@ -27,9 +29,6 @@ public class VideoInfoController {
 
     @GetMapping("info")
     public R videoInfo(VideoInfo videoInfo) {
-        Page<VideoInfo> page=new Page<>();
-        page.setCurrent(videoInfo.getPageNo());
-        page.setSize(videoInfo.getPageSize());
-        return videoInfoService.selectPage(page,videoInfo);
+        return videoInfoService.selectPage(videoInfo);
     }
 }

@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author Ervin.Wang
@@ -15,5 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IVideoInfoService extends IService<VideoInfo> {
 
-    R selectPage(Page<VideoInfo> page, VideoInfo videoInfo);
+    R selectPage(VideoInfo videoInfo);
 }

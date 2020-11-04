@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
 import org.lemon.common.data.tenant.GbTenantHandler;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -25,6 +26,7 @@ import java.util.List;
 @ConditionalOnClass(DataSource.class)
 @AutoConfigureAfter(DataSourceAutoConfiguration.class)
 @Import(LemonMetaObjectHandler.class)
+@MapperScan("org.lemon.*.mapper")
 public class MybatisPlusConfig {
 
 	/**
@@ -39,21 +41,12 @@ public class MybatisPlusConfig {
 
 	/**
 	 * 分页插件
-	 * @param tenantHandler
 	 * @return
 	 */
-//	@Bean
-//	@ConditionalOnMissingBean
-//	@ConditionalOnProperty(name = "mybatisPlus.tenantEnable", havingValue = "true", matchIfMissing = true)
-//	public PaginationInterceptor paginatiosnInterceptor(GbTenantHandler tenantHandler) {
-//		PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
-//		List<ISqlParser> sqlParserList = new ArrayList<>();
-//		TenantSqlParser tenantSqlParser = new TenantSqlParser();
-//		tenantSqlParser.setTenantHandler(tenantHandler);
-//		sqlParserList.add(tenantSqlParser);
-//		paginationInterceptor.setSqlParserList(sqlParserList);
-//		return paginationInterceptor;
-//	}
+	@Bean
+	public PaginationInterceptor paginatiosnInterceptor() {
+		return new PaginationInterceptor();
+	}
 
 	/**
 	 * 乐观锁

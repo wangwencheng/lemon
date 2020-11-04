@@ -2,10 +2,11 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   org.lemon.common.data.mybatis.WebMvcConfig,\
   org.lemon.common.data.cache.RedisTemplateConfig,\
   org.lemon.common.data.cache.RedisCacheManagerConfig,\
+  org.lemon.common.data.mybatis.MybatisPlusConfig,\
   org.lemon.common.data.cache.RedisCacheAutoConfiguration
 
 
 # org.lemon.common.data.tenant.TenantContextHolderFilter,\
 # org.lemon.common.data.tenant.GbTenantConfigProperties,\
 # org.lemon.common.data.tenant.GbFeignTenantConfiguration,\
-# org.lemon.common.data.mybatis.MybatisPlusConfig,\
+
