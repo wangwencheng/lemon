@@ -31,7 +31,7 @@ public class VideoInfoServiceImpl extends ServiceImpl<VideoInfoMapper, VideoInfo
 
     @Override
     public R selectPage(VideoInfo videoInfo) {
-        Page<VideoInfo> page = new Page<>(videoInfo.getPageNo(), 2L);
+        Page<VideoInfo> page = new Page<>(videoInfo.getPageNo(), videoInfo.getPageSize());
         LambdaQueryWrapper<VideoInfo> query = Wrappers.lambdaQuery();
         query.eq(VideoInfo::getRecStatus, RecStatusEnum.UNDELETED.getCode());
         query.eq(Objects.nonNull(videoInfo.getVideoType()), VideoInfo::getVideoType, videoInfo.getVideoType());
