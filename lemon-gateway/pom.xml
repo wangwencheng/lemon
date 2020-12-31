@@ -51,6 +51,15 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger.fox.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba.csp</groupId>
+			<artifactId>sentinel-datasource-nacos</artifactId>
+		</dependency>
+
 		<!--内部公共模块-->
 		<dependency>
 			<groupId>org.lemon</groupId>
